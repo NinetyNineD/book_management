@@ -118,7 +118,7 @@
           <!-- Topbar Search -->
           <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
             <div class="input-group">
-              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+              <input type="text" class="form-control bg-light border-0 small" placeholder="Tìm kiếm ..."
                 aria-label="Search" aria-describedby="basic-addon2">
               <div class="input-group-append">
                 <button class="btn btn-primary" type="button">
@@ -148,10 +148,8 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Admin</h1>
-          <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more
-            information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official
-              DataTables documentation</a>.</p>
+          <h1 class="h3 mb-2 text-gray-800">Quản Lý Nhân Viên</h1>
+          <p class="mb-4">Nguyễn Tấn Dũng</p>
           <!-- Button trigger modal -->
           <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId">
             Thêm mới
@@ -163,102 +161,186 @@
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title">Thông tin nhân viên</h5>
+                  <h5 class="modal-title">Thêm nhân viên mới</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
                 <div class="modal-body">
-                  <form class="form-inline">
-                    <div class="form-group">
-                      <label for="">Mã nhân viên </label>
-                      <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
-                      <small id="helpId" class="text-muted">Help text</small>
+                    <div class="form-group row">
+                      <label for="pwd" class="col-sm-3 col-form-label">Họ và tên</label>
+                      <div class="col-sm-7">
+                      	<input type="text" name="" id="" value="" class="form-control" placeholder="">
+                      </div>
                     </div>
-                    <div class="form-group">
-                      <label for="">Họ và tên </label>
-                      <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
-                      <small id="helpId" class="text-muted">Help text</small>
+                    <div class="form-group row">
+                      <label for="pwd" class="col-sm-3 col-form-label">Ngày sinh</label>
+                      <div class="col-sm-7">
+                      	<input type="text" name="" id="" value="" class="form-control" placeholder="">
+                      </div>
                     </div>
-                    <div class="form-group">
-                      <label for="">Chức vụ</label>
-                      <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
-                      <small id="helpId" class="text-muted">Help text</small>
+                    <div class="form-group row">
+                      <label for="pwd" class="col-sm-3 col-form-label">Giới tính</label>
+                      <div class="col-sm-7">
+                      	<input type="text" name="" id="" value="" class="form-control" placeholder="">
+                      </div>
                     </div>
-                    <div class="form-group">
-                      <label for="">Ngày làm việc</label>
-                      <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
-                      <small id="helpId" class="text-muted">Help text</small>
+                    <div class="form-group row">
+                      <label for="pwd" class="col-sm-3 col-form-label">Chức vụ</label>
+                      <div class="col-sm-7">
+                      	<input type="text" name="" id="" value="" class="form-control" placeholder="">
+                      </div>
                     </div>
-                    <div class="form-group">
-                      <label for="">Ngày sinh</label>
-                      <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
-                      <small id="helpId" class="text-muted">Help text</small>
+                    <div class="form-group row">
+                      <label for="pwd" class="col-sm-3 col-form-label">Số điện thoại</label>
+                      <div class="col-sm-7">
+                      	<input type="text" name="" id="" value="" class="form-control" placeholder="">
+                      </div>
                     </div>
-                    <div class="form-group">
-                      <label for="">Địa chỉ</label>
-                      <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
-                      <small id="helpId" class="text-muted">Help text</small>
+                    <div class="form-group row">
+                      <label for="pwd" class="col-sm-3 col-form-label">Email</label>
+                      <div class="col-sm-7">
+                      	<input type="email" name="" id="" value="" class="form-control" placeholder="">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="pwd" class="col-sm-3 col-form-label">Địa chỉ</label>
+                      <div class="col-sm-7">
+                      	<input type="text" name="" id="" value="" class="form-control" placeholder="">
+                      </div>
                     </div>
                   </form>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                  <button type="button" class="btn btn-primary">Thêm Mới</button>
                 </div>
               </div>
             </div>
           </div>
           <!-- DataTales Example -->
+          <!-- Edit Employee -->
+          <div class="modal fade" id="modelId_2" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Sửa thông tin nhân viên</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                      <label for="pwd" class="col-sm-3 col-form-label">Họ và tên</label>
+                      <div class="col-sm-7">
+                      	<input type="text" name="" id="" value="" class="form-control" placeholder="">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="pwd" class="col-sm-3 col-form-label">Ngày sinh</label>
+                      <div class="col-sm-7">
+                      	<input type="text" name="" id="" value="" class="form-control" placeholder="">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="pwd" class="col-sm-3 col-form-label">Giới tính</label>
+                      <div class="col-sm-7">
+                      	<input type="text" name="" id="" value="" class="form-control" placeholder="">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="pwd" class="col-sm-3 col-form-label">Chức vụ</label>
+                      <div class="col-sm-7">
+                      	<input type="text" name="" id="" value="" class="form-control" placeholder="">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="pwd" class="col-sm-3 col-form-label">Số điện thoại</label>
+                      <div class="col-sm-7">
+                      	<input type="text" name="" id="" value="" class="form-control" placeholder="">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="pwd" class="col-sm-3 col-form-label">Email</label>
+                      <div class="col-sm-7">
+                      	<input type="email" name="" id="" value="" class="form-control" placeholder="">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="pwd" class="col-sm-3 col-form-label">Địa chỉ</label>
+                      <div class="col-sm-7">
+                      	<input type="text" name="" id="" value="" class="form-control" placeholder="">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                  <button type="button" class="btn btn-primary">Lưu</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Edit Employee -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
               <h6 class="m-0 font-weight-bold text-primary">Danh sách nhân viên</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table-bordered table-striped" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Mã nhân viên</th>
+                      <th>Mã</th>
                       <th>Họ tên</th>
-                      <th>Chức vụ</th>
-                      <th>Ngày làm việc</th>
                       <th>Ngày sinh</th>
+                      <th>Giới tính</th>
+                      <th>Chức vụ</th>
+                      <th>Điện thoại</th>
+                      <th>Email</th>
                       <th>Địa chỉ</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
-                      <th>Mã nhân viên</th>
+                      <th>Mã</th>
                       <th>Họ tên</th>
-                      <th>Chức vụ</th>
-                      <th>Ngày làm việc</th>
                       <th>Ngày sinh</th>
+                      <th>Giới tính</th>
+                      <th>Chức vụ</th>
+                      <th>Điện thoại</th>
+                      <th>Email</th>
                       <th>Địa chỉ</th>
                     </tr>
                   </tfoot>
                   <tbody>
                     <tr>
-                      <td>NV01</td>
-                      <td>Nguyễn Thành A</td>
+                      <td>1</td>
+                      <td>Nguyễn Thành Công</td>
+                      <td>1992/03/25</td>
+                      <td>Nam</td>
                       <td>Quản lý</td>
-                      <td>24/02/2020</td>
-                      <td>09/01/1994</td>
+                      <td>0356458952</td>
+                      <td>thanhcong@gmail.com</td>
                       <td>Hà Nội</td>
                       <td>
-                        <a name="" id="" class="btn btn-warning" href="#" role="button">Sửa</a>
+
+                        <a name="" id="" class="btn btn-warning" href="#" role="button" data-toggle="modal" data-target="#modelId_2">Sửa</a>
                         <a name="" id="" class="btn btn-danger" href="#" role="button">Xóa</a>
                       </td>
                     </tr>
                     <tr>
-                      <td>NV02</td>
-                      <td>Nguyễn Thị H</td>
+                      <td>2</td>
+                      <td>Dương Thị Thu Huyền</td>
+                      <td>1996/12/05</td>
+                      <td>Nữ</td>
                       <td>Nhân viên</td>
-                      <td>15/09/2020</td>
-                      <td>01/12/1996</td>
-                      <td>Hà Nội</td>
+                      <td>0312345682</td>
+                      <td>thuhuyen@gmail.com</td>
+                      <td>Hà Nam</td>
                       <td>
-                        <a name="" id="" class="btn btn-warning" href="#" role="button">Sửa</a>
+                        <a name="" id="" class="btn btn-warning" href="#" role="button" data-toggle="modal" data-target="#modelId_2">Sửa</a>
                         <a name="" id="" class="btn btn-danger" href="#" role="button">Xóa</a>
                       </td>
                     </tr>
