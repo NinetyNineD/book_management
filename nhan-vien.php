@@ -1,3 +1,8 @@
+<?php
+  require_once "DAO/DBConnect.php";
+  $result = array();
+  $result = getAllList("employee","Code");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -118,12 +123,14 @@
           <!-- Topbar Search -->
           <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
             <div class="input-group">
-              <input type="text" class="form-control bg-light border-0 small" placeholder="Tìm kiếm ..."
+              <input type="text" class="form-control bg-light border-0 small" id="Search" placeholder="Tìm kiếm ..."
                 aria-label="Search" aria-describedby="basic-addon2">
               <div class="input-group-append">
+                <!--
                 <button class="btn btn-primary" type="button">
                   <i class="fas fa-search fa-sm"></i>
                 </button>
+                -->
               </div>
             </div>
           </form>
@@ -291,7 +298,7 @@
               <h6 class="m-0 font-weight-bold text-primary">Danh sách nhân viên</h6>
             </div>
             <div class="card-body">
-              <div class="table-responsive">
+              <div class="list-employee">
                 <table class="table-bordered table-striped" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
@@ -318,26 +325,29 @@
                     </tr>
                   </tfoot>
                   <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>Nguyễn Thành Công</td>
-                      <td>1992/03/25</td>
-                      <td>Nam</td>
-                      <td>Quản lý</td>
-                      <td>0356458952</td>
-                      <td>thanhcong@gmail.com</td>
-                      <td>Hà Nội</td>
-                      <td>
-
-                        <a name="" id="" class="btn btn-warning" href="#" role="button" data-toggle="modal" data-target="#modelId-update-employee">
-                        	<i class="fa fa-pencil-alt"></i>
-                        	Sửa
-                    	</a>
-                        <a name="" id="" class="btn btn-danger" href="#" role="button">
-                        	<i class="fa fa-trash"></i>
-                        	Xóa
-                    	</a>
-                      </td>
+                    <?php  
+                      foreach ($result as $item){
+                    ?>
+                      <tr>
+                        <td><?php echo $item['Code']; ?></td>
+                        <td><?php echo $item['Name']; ?></td>
+                        <td><?php echo $item['DateOfBirth']; ?></td>
+                        <td><?php echo $item['Gender']; ?></td>
+                        <td><?php echo $item['Position']; ?></td>
+                        <td><?php echo $item['PhoneNumber']; ?></td>
+                        <td><?php echo $item['Email']; ?></td>
+                        <td><?php echo $item['Address']; ?></td>
+                        <td>
+                          <button name="<?php echo $item['Code']; ?>" id="btn-click-update-emplyee" class="btn btn-warning" href="#" role="button">
+                            <i class="fa fa-pencil-alt"></i> Sửa
+                          </button>
+                          <button name="<?php echo $item['Code']; ?>" id="btn-click-delete-emplyee" class="btn btn-danger" href="#" role="button">
+                            <i class="fa fa-trash"></i>Xóa
+                          </button>
+                        </td>
+                    <?php
+                      } 
+                    ?>
                     </tr>
                   </tbody>
                 </table>
@@ -378,6 +388,7 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
+  <script src="js/js.js"></script>
 </body>
 
 </html>
