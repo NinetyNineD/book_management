@@ -39,7 +39,6 @@ $(document).ready(function () {
     });
     //EDIT
     var Code_Edit_Update;
-    var Gender_update_employee;
     $(document).on('click', '#btn-click-edit-employee', function(){
         let name = $(this).attr('name');
         $.ajax({
@@ -65,7 +64,6 @@ $(document).ready(function () {
                     document.getElementById("Gender-Nu-update-employee").checked='checked';
                     $('#Gender-Nu-update-employee').val(getArray.Gender);
                 }
-                Gender_update_employee = getArray.Gender;
                 $('#Position-update-employee').val(getArray.Position);
                 $('#PhoneNumber-update-employee').val(getArray.PhoneNumber);
                 $('#Email-update-employee').val(getArray.Email);
@@ -80,7 +78,7 @@ $(document).ready(function () {
         let DateOfBirth = $('#DateOfBirth-update-employee').val();
 
         let Gender = $('input[name=Gender]:checked').val();
-        
+
         let Position = $('#Position-update-employee').val();
         let PhoneNumber = $('#PhoneNumber-update-employee').val();
         let Email = $('#Email-update-employee').val();
@@ -107,7 +105,7 @@ $(document).ready(function () {
                 
                 $('#modelId-update-employee').modal('hide');
 
-                Code_Edit_Update = Gender_update_employee = "";
+                Code_Edit_Update = "";
             }
         });
     });
