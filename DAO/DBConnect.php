@@ -44,3 +44,24 @@ function addEmployee($Name, $DateOfBirth, $Gender, $Position, $PhoneNumber, $Ema
     return $query;
     Disconnect();
 }
+//Search
+//Search employee
+function searchEmployee($Table,$Search,$ID){
+    global $conn;
+    Connect();
+    $sql = "Select * From ".$Table." 
+        Where Name like '%".$Search."%' 
+        or DateOfBirth like'%".$Search."%' 
+        or Gender like'%".$Search."%' 
+        or Position like'%".$Search."%'
+        or PhoneNumber like'%".$Search."%'
+        or Email like'%".$Search."%'
+        or Address like'%".$Search."%'
+        order by ".$ID;
+    $query = mysqli_query($conn,$sql);
+    $result = array();
+    while ($row = mysqli_fetch_assoc($query)){
+        array_push($result,$row);
+    }
+    return $result;
+}
