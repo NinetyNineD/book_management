@@ -298,7 +298,7 @@
               <h6 class="m-0 font-weight-bold text-primary">Danh sách nhân viên</h6>
             </div>
             <div class="card-body">
-              <div class="list-employee">
+              <div id="list-employee">
                 <table class="table-bordered table-striped" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>

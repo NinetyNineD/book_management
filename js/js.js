@@ -5,13 +5,13 @@ $(document).ready(function () {
         //Khai báo biến dùng từ khóa : let,var,const
         //$('#id'): gọi đến phần tử trong DOM(file html)
         //Dùng hàm val() để lấy giá trị
-        let Name = $('#Name').val();
-        let DateOfBirth = $('#DateOfBirth').val();
-        let Gender = $('#Gender').val();
-        let Position = $('#Position').val();
-        let PhoneNumber = $('#PhoneNumber').val();
-        let Email = $('#Email').val();
-        let Address = $('#Address').val();
+        let Name = $('#Name-add-employee').val();
+        let DateOfBirth = $('#DateOfBirth-add-employee').val();
+        let Gender = $('#Gender-add-employee').val();
+        let Position = $('#Position-add-employee').val();
+        let PhoneNumber = $('#PhoneNumber-add-employee').val();
+        let Email = $('#Email-add-employee').val();
+        let Address = $('#Address-add-employee').val();
 
         $.ajax({
             //Đường dẫn đến file xử lý
