@@ -38,7 +38,7 @@ $(document).ready(function () {
     });
     $(document).on('click', '#btn-click-delete-employee', function(){
 
-      var Code = $(this).attr('name');
+      let Code = $(this).attr('name');
 
       $.ajax({
         url: 'nhan-vien-delete.php',
