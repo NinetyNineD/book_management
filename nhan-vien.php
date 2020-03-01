@@ -184,7 +184,7 @@
                     <div class="form-group row">
                       <label for="pwd" class="col-sm-3 col-form-label">Ngày sinh</label>
                       <div class="col-sm-7">
-                      	<input type="text" name="" id="DateOfBirth-add-employee" value="" class="form-control" placeholder="">
+                      	<input type="date" name="" id="DateOfBirth-add-employee" value="" class="form-control" placeholder="">
                       </div>
                     </div>
                     <div class="form-group row">
@@ -249,7 +249,7 @@
                     <div class="form-group row">
                       <label for="pwd" class="col-sm-3 col-form-label">Ngày sinh</label>
                       <div class="col-sm-7">
-                      	<input type="text" name="" id="DateOfBirth-update-add-employee" value="" class="form-control" placeholder="">
+                      	<input type="date" name="" id="DateOfBirth-update-add-employee" value="" class="form-control" placeholder="">
                       </div>
                     </div>
                     <div class="form-group row">
