@@ -338,7 +338,7 @@
                         <td><?php echo $item['Email']; ?></td>
                         <td><?php echo $item['Address']; ?></td>
                         <td>
-                          <button name="<?php echo $item['Code']; ?>" id="btn-click-update-emplyee" class="btn btn-warning" href="#" role="button">
+                          <button name="<?php echo $item['Code']; ?>" id="btn-click-update-emplyee" class="btn btn-warning" href="#" role="button" data-toggle="modal" data-target="#modelId-add-employee">
                             <i class="fa fa-pencil-alt"></i> Sửa
                           </button>
                           <button name="<?php echo $item['Code']; ?>" id="btn-click-delete-emplyee" class="btn btn-danger" href="#" role="button">
