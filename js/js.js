@@ -36,6 +36,23 @@ $(document).ready(function () {
             }
         });
     });
+    $(document).on('click', '#btn-click-delete-employee', function(){
+
+      var Code = $(this).attr('name');
+
+      $.ajax({
+        url: 'nhan-vien-delete.php',
+        type: 'POST',
+        data: {
+          Code: Code
+        },
+        success: function(data){
+          //đổ dữ liệu
+          $('#list-employee').html(data);
+
+        }
+      });
+    })
     //Search prolet search = $(thisu.val
     //Search keyup() khi nhập bàn sẽ gọi ajax luôn
     $('#Search').keyup(function () {
