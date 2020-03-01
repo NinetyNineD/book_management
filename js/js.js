@@ -36,6 +36,37 @@ $(document).ready(function () {
             }
         });
     });
+    $(document).on('click', '#btn-openform-update-employee', function(){
+        let name = $(this).attr('name');
+        $.ajax({
+            url: 'nhan-vien-edit.php',
+            type: 'POST',
+            data: {
+                name: name
+            },
+
+            contenttype: "application/json; charset=utf-8",
+            datatype: "json",
+            
+            success: function(response){
+
+                let getArray = jQuery.parseJSON(response);
+                let Code = getArray.Code;
+                $('#Name-update-employee').val(getArray.Name);
+                $('#DateOfBirth-update-employee').val(getArray.DateOfBirth);
+                if(getArray.Gender=='Nam'){
+                    document.getElementById("Gender-Nam-update-employee").checked='checked';
+                } else if(getArray.Gender=='Nữ'){
+                    document.getElementById("Gender-Nu-update-employee").checked='checked';
+                }
+                $('#Position-update-employee').val(getArray.Position);
+                $('#PhoneNumber-update-employee').val(getArray.PhoneNumber);
+                $('#Email-update-employee').val(getArray.Email);
+                $('#Address-update-employee').val(getArray.Address);
+                
+            }
+        })
+    });
     $(document).on('click', '#btn-click-delete-employee', function(){
 
       let Code = $(this).attr('name');
