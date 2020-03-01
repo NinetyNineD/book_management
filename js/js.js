@@ -36,6 +36,19 @@ $(document).ready(function () {
             }
         });
     });
-    //
-    
+    //Search prolet search = $(thisu.val
+    //Search keyup() khi nhập bàn sẽ gọi ajax luôn
+    $('#Search').keyup(function () {
+        let Search = $(this).val();
+        if (Search !== ''){
+            $.ajax({
+                url:"nhan-vien-search.php",
+                method:"POST",
+                data:{Search:Search},
+                success: function (data) {
+                    $('#list-employee').html(data);
+                }
+            })
+        }
+    });
 });
