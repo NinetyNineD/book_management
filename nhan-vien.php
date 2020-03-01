@@ -215,7 +215,7 @@
                     <div class="form-group row">
                       <label for="pwd" class="col-sm-3 col-form-label">Địa chỉ</label>
                       <div class="col-sm-7">
-                      	<input type="text" name="" id="" value="Address-add-employee" class="form-control" placeholder="">
+                      	<input type="text" name="" id="Address-add-employee" value="" class="form-control" placeholder="">
                       </div>
                     </div>
                   </form>
