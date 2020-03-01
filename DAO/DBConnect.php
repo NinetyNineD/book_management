@@ -45,11 +45,15 @@ function addEmployee($Name, $DateOfBirth, $Gender, $Position, $PhoneNumber, $Ema
     Disconnect();
 }
 // FUNCTION DELETE
-// Delete employee
-function deleteEmployee($ID){
+// Delete employee,...
+function Delete($Table, $Id_Database, $ID){
+    // $Table: bảng 
+    // $Id_Database: Tên cột khóa chính trong csdl
+    // $Name: là nơi mình đặt $item['$Id_Database'] ở nút Xóa khi hiện thị hay ajax - ID gắn với dữ liệu khi hiện thị
+    //
     global $conn;
     Connect();
-    $sql = "Delete From employee Where Code =".$ID;
+    $sql = "Delete From ".$Table." Where ".$Id_Database." =".$ID;
     $query = mysqli_query($conn, $sql);
     return $query;
     Disconnect();
