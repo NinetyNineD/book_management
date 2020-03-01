@@ -24,7 +24,7 @@ function Disconnect (){
 // Get All Data
 function getAllList($Table,$ID){
     global $conn;
-    connect();
+    Connect();
     $sql = "Select * From $Table order by ".$ID;
     $query = mysqli_query($conn, $sql);
     $result = array();
@@ -32,4 +32,15 @@ function getAllList($Table,$ID){
         array_push($result, $row);
     }
     return $result;
+}
+// FUNCTION ADD
+// Add employee
+function addEmployee($Name, $DateOfBirth, $Gender, $Position, $PhoneNumber, $Email, $Address){
+    global $conn;
+    Connect();
+    $sql = "Insert Into employee( Name, DateOfBirth, Gender, Position, PhoneNumber, Email, Address ) 
+              Values ('$Name', '$DateOfBirth', '$Gender', '$Position', '$PhoneNumber', '$Email', '$Address')";
+    $query = mysqli_query($conn, $sql);
+    return $query;
+    Disconnect();
 }
