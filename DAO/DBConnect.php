@@ -21,3 +21,15 @@ function Disconnect (){
         mysqli_close($conn);
     }
 }
+// Get All Data
+function getAllList($Table,$ID){
+    global $conn;
+    connect();
+    $sql = "Select * From $Table order by".$ID;
+    $query = mysqli_query($conn, $sql);
+    $result = array();
+    while ($row = mysqli_fetch_assoc($query)){
+        array_push($result, $row);
+    }
+    return $result;
+}
