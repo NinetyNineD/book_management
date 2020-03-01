@@ -10,7 +10,7 @@
 	$ouput = '';
 	if (count($result) > 0) {
 	    $ouput .= '<div class="table-responsive">
-	                            <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
+	                            <table class="table-bordered table-striped" id="dataTable" width="100%" cellspacing="0">
 	                                <thead>
 	                                <tr>
 	                                    <th>Mã</th>
