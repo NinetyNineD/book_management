@@ -60,7 +60,7 @@ if (count($result) > 0) {
                     
                     <td>
                         <button name="'.$item['Code'].'" id="btn-click-update-emloyee" class="btn btn-warning" href="#"
-                                role="button">
+                                role="button" data-toggle="modal" data-target="#modelId-add-employee">
                             <i class="fa fa-pencil-alt"></i> Sửa
                         </button>
                         <button name="'.$item['Code'].'" id="btn-click-delete-employee" class="btn btn-danger" href="#"
