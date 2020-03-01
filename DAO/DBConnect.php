@@ -57,8 +57,7 @@ function Edit($Table, $Id_Database, $ID){
 function updateEmployee($Code, $Name, $DateOfBirth, $Gender, $Position, $PhoneNumber, $Email, $Address){
     global $conn;
     Connect();
-    $sql = "Update employee Set Name = '$Name', DateOfBirth = '$DateOfBirth', Gender = '$Gender', $Position = '$Position',  
-                PhoneNumber = '$PhoneNumber', Email = '$Email', Address = '$Address' Where Code = ".$Code;
+    $sql = "Update employee Set Name='$Name', DateOfBirth='$DateOfBirth', Gender='$Gender', Position='$Position', PhoneNumber='$PhoneNumber', Email='$Email', Address='$Address' Where Code=".$Code;
     $query = mysqli_query($conn, $sql);
     return $query;
     Disconnect();
