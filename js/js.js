@@ -29,6 +29,7 @@ $(document).ready(function () {
                 Address: Address
             },
             success: function (data) {
+                alert("Thêm nhân viên thành công !");
                 //Đổ dữ liệu
                 $('#list-employee').html(data);
                 //đóng modal
@@ -36,7 +37,9 @@ $(document).ready(function () {
             }
         });
     });
-    $(document).on('click', '#btn-openform-update-employee', function(){
+    //EDIT
+    var Code_Edit_Update;
+    $(document).on('click', '#btn-click-edit-employee', function(){
         let name = $(this).attr('name');
         $.ajax({
             url: 'nhan-vien-edit.php',
@@ -51,7 +54,7 @@ $(document).ready(function () {
             success: function(response){
 
                 let getArray = jQuery.parseJSON(response);
-                let Code = getArray.Code;
+                Code_Edit_Update = getArray.Code;
                 $('#Name-update-employee').val(getArray.Name);
                 $('#DateOfBirth-update-employee').val(getArray.DateOfBirth);
                 if(getArray.Gender=='Nam'){
@@ -67,6 +70,35 @@ $(document).ready(function () {
             }
         })
     });
+    //Update
+    $('#btn-click-update-employee').on('click', function(){
+        let Name = $('#Name-update-employee').val();
+        let DateOfBirth = $('#DateOfBirth-update-employee').val();
+        let Gender = $('#Gender-update-employee').val();
+        let Position = $('#Position-update-employee').val();
+        let PhoneNumber = $('#PhoneNumber-update-employee').val();
+        let Email = $('#Email-update-employee').val();
+        let Address = $('#Address-update-employee').val(); 
+
+        $.ajax({
+            url: 'nhan-vien-update.php',
+            type: 'POST',
+            data: {
+                Code: Code_Edit_Update,
+                Name: Name,
+                DateOfBirth: DateOfBirth,
+                Gender: Gender,
+                Position: Position,
+                PhoneNumber: PhoneNumber,
+                Email: Email,
+                Address: Address
+            },
+            success: function(){
+                alert("Cập nhật thành công !");   
+                mem_id = "";
+            }
+        });
+    });
     $(document).on('click', '#btn-click-delete-employee', function(){
 
       let Code = $(this).attr('name');
@@ -78,6 +110,7 @@ $(document).ready(function () {
           Code: Code
         },
         success: function(data){
+          alert("Xóa nhân viên thành công !");
           //đổ dữ liệu
           $('#list-employee').html(data);
 
