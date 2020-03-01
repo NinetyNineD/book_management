@@ -25,7 +25,7 @@ function Disconnect (){
 function getAllList($Table,$ID){
     global $conn;
     connect();
-    $sql = "Select * From $Table order by".$ID;
+    $sql = "Select * From $Table order by ".$ID;
     $query = mysqli_query($conn, $sql);
     $result = array();
     while ($row = mysqli_fetch_assoc($query)){
