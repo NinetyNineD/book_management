@@ -3,13 +3,13 @@ require_once "DAO/DBConnect.php";
 //Lấy data từ data  file js gửi
 //$_POST['truyền key trong data(data{key:value})']
 
-$Name = $_POST['Name-add-employee'];
-$DateOfBirth = $_POST['DateOfBirth-add-employee'];
-$Gender = $_POST['Gender-add-employee'];
-$Position = $_POST['Position-add-employee'];
-$PhoneNumber = $_POST['PhoneNumber-add-employee'];
-$Email = $_POST['Email-add-employee'];
-$Address = $_POST['Address-add-employee'];
+$Name = $_POST['Name'];
+$DateOfBirth = $_POST['DateOfBirth'];
+$Gender = $_POST['Gender'];
+$Position = $_POST['Position'];
+$PhoneNumber = $_POST['PhoneNumber'];
+$Email = $_POST['Email'];
+$Address = $_POST['Address'];
 
 //Function add employee truyền tham số
 addEmployee($Name, $DateOfBirth, $Gender, $Position, $PhoneNumber, $Email, $Address);
