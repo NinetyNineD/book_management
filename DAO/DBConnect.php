@@ -44,6 +44,16 @@ function addEmployee($Name, $DateOfBirth, $Gender, $Position, $PhoneNumber, $Ema
     return $query;
     Disconnect();
 }
+// FUNCTION DELETE
+// Delete employee
+function deleteEmployee($ID){
+    global $conn;
+    Connect();
+    $sql = "Delete From employee Where Code =".$ID;
+    $query = mysqli_query($conn, $sql);
+    return $query;
+    Disconnect();
+}
 //Search
 //Search employee
 function searchEmployee($Table,$Search,$ID){
