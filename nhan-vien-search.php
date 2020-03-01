@@ -44,7 +44,7 @@ if (count($result) > 0) {
                     <td>'.$item['Address'].'</td>
                     
                     <td>
-                        <button name="'.$item['Code'].'" id="btn-openform-update-employee" class="btn btn-warning" href="#"
+                        <button name="'.$item['Code'].'" id="btn-click-edit-employee" class="btn btn-warning" href="#"
                                 role="button" data-toggle="modal" data-target="#modelId-update-employee">
                             <i class="fa fa-pencil-alt"></i> Sửa
                         </button>
