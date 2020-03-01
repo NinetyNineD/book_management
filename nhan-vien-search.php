@@ -5,7 +5,7 @@ $result = searchEmployee('employee', $Search, 'Code');
 $ouput = '';
 if (count($result) > 0) {
     $ouput .= '<div class="table-responsive">
-                            <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
+                            <table class="table-bordered table-striped" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                 <tr>
                                     <th>Mã</th>
@@ -33,7 +33,7 @@ if (count($result) > 0) {
                                 <tbody>';
     foreach ($result as $item) {
         $ouput .= '
-                   <tr>
+                <tr>
                     <td>'.$item['Code'].'</td>
                     <td>'.$item['Name'].'</td>
                     <td>'.$item['DateOfBirth'].'</td>
@@ -44,7 +44,7 @@ if (count($result) > 0) {
                     <td>'.$item['Address'].'</td>
                     
                     <td>
-                        <button name="'.$item['Code'].'" id="btn-click-update-emloyee" class="btn btn-warning" href="#"
+                        <button name="'.$item['Code'].'" id="btn-openform-update-employee" class="btn btn-warning" href="#"
                                 role="button" data-toggle="modal" data-target="#modelId-update-employee">
                             <i class="fa fa-pencil-alt"></i> Sửa
                         </button>
@@ -54,10 +54,10 @@ if (count($result) > 0) {
                         </button>
                     </td>
                    
-                </tr>
+                
                                 ';
     }
-    $ouput .= '</tbody>
+    $ouput .= '</tr></tbody>
                             </table>
                         </div>';
     echo $ouput;

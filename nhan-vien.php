@@ -190,8 +190,8 @@
                     <div class="form-group row">
                       <label for="pwd" class="col-sm-3 col-form-label">Giới tính</label>
                       <div class="col-sm-7">
-                      	<input type="radio" name="" id="Gender-add-employee" value="Nam" placeholder="">Nam
-                        <input type="radio" name="" id="Gender-add-employee" value="Nữ" placeholder="">Nữ
+                      	<input type="radio" name="Gender" id="Gender-add-employee" value="Nam" placeholder="">Nam
+                        <input type="radio" name="Gender" id="Gender-add-employee" value="Nữ" placeholder="">Nữ
                       </div>
                     </div>
                     <div class="form-group row">
@@ -249,14 +249,14 @@
                     <div class="form-group row">
                       <label for="pwd" class="col-sm-3 col-form-label">Ngày sinh</label>
                       <div class="col-sm-7">
-                      	<input type="date" name="" id="DateOfBirth-update-add-employee" value="" class="form-control" placeholder="">
+                      	<input type="date" name="" id="DateOfBirth-update-employee" value="" class="form-control" placeholder="">
                       </div>
                     </div>
                     <div class="form-group row">
                       <label for="pwd" class="col-sm-3 col-form-label">Giới tính</label>
                       <div class="col-sm-7">
-                      	<input type="radio" name="" id="Gender-update-employee" value="Nam" placeholder="">Nam
-                        <input type="radio" name="" id="Gender-update-employee" value="Nữ" placeholder="">Nữ
+                      	<input type="radio" name="Gender" id="Gender-Nam-update-employee" value="Nam" placeholder="">Nam
+                        <input type="radio" name="Gender" id="Gender-Nu-update-employee" value="Nữ" placeholder="">Nữ
                       </div>
                     </div>
                     <div class="form-group row">
@@ -287,7 +287,7 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-                  <button type="button" class="btn btn-primary" id="btn-click-update-employee">Sửa</button>
+                  <button type="button" class="btn btn-primary" id="btn-click-update-employee">Cập nhật</button>
                 </div>
               </div>
             </div>
@@ -338,7 +338,7 @@
                         <td><?php echo $item['Email']; ?></td>
                         <td><?php echo $item['Address']; ?></td>
                         <td>
-                          <button name="<?php echo $item['Code']; ?>" id="btn-click-update-emplyee" class="btn btn-warning" href="#" role="button" data-toggle="modal" data-target="#modelId-update-employee">
+                          <button name="<?php echo $item['Code']; ?>" id="btn-openform-update-employee" class="btn btn-warning" href="#" role="button" data-toggle="modal" data-target="#modelId-update-employee">
                             <i class="fa fa-pencil-alt"></i> Sửa
                           </button>
                           <button name="<?php echo $item['Code']; ?>" id="btn-click-delete-employee" class="btn btn-danger" href="#" role="button">
@@ -365,7 +365,32 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-
+            <!--Phân Trang-->
+            <div class="row">
+              <div class="col-sm-12 col-md-7">
+                <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
+                  <ul class="pagination">
+                    <li class="paginate_button page-item previous disabled" id="dataTable_previous">
+                        <a href="#" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">Trang Sau</a></li>
+                    <li class="paginate_button page-item active">
+                        <a href="#" aria-controls="dataTable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
+                    <li class="paginate_button page-item ">
+                      <a href="#" aria-controls="dataTable" data-dt-idx="2" tabindex="0" class="page-link">2</a></li>
+                    <li class="paginate_button page-item ">
+                      <a href="#" aria-controls="dataTable" data-dt-idx="3" tabindex="0" class="page-link">3</a></li>
+                    <li class="paginate_button page-item ">
+                      <a href="#" aria-controls="dataTable" data-dt-idx="4" tabindex="0" class="page-link">4</a></li>
+                    <li class="paginate_button page-item ">
+                      <a href="#" aria-controls="dataTable" data-dt-idx="5" tabindex="0" class="page-link">5</a></li>
+                    <li class="paginate_button page-item ">
+                      <a href="#" aria-controls="dataTable" data-dt-idx="6" tabindex="0" class="page-link">6</a></li>
+                    <li class="paginate_button page-item next" id="dataTable_next">
+                      <a href="#" aria-controls="dataTable" data-dt-idx="7" tabindex="0" class="page-link">Trang Trước</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!--END-->
           </div>
         </div>
       </footer>
@@ -389,6 +414,8 @@
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
   <script src="js/js.js"></script>
+  <script src="js/jquery-3.2.1.min"></script>
+  
 </body>
 
 </html>
