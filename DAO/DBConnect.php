@@ -44,6 +44,15 @@ function addEmployee($Name, $DateOfBirth, $Gender, $Position, $PhoneNumber, $Ema
     return $query;
     Disconnect();
 }
+// Edit employee
+function editEmployee($Table, $ID){
+    global $conn;
+    Connect();
+    $sql = "Select * From ".$Table." Where Code = ".$ID;
+    $query = mysqli_query($conn, $sql);
+    $result = mysqli_fetch_assoc($query);
+    return $result;
+}
 // Update employee
 function updateEmployee($Code, $Name, $DateOfBirth, $Gender, $Position, $PhoneNumber, $Email, $Address){
     global $conn;
