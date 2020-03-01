@@ -341,7 +341,7 @@
                           <button name="<?php echo $item['Code']; ?>" id="btn-click-update-emplyee" class="btn btn-warning" href="#" role="button" data-toggle="modal" data-target="#modelId-update-employee">
                             <i class="fa fa-pencil-alt"></i> Sửa
                           </button>
-                          <button name="<?php echo $item['Code']; ?>" id="btn-click-delete-emplyee" class="btn btn-danger" href="#" role="button">
+                          <button name="<?php echo $item['Code']; ?>" id="btn-click-delete-employee" class="btn btn-danger" href="#" role="button">
                             <i class="fa fa-trash"></i>Xóa
                           </button>
                         </td>
