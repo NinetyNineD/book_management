@@ -39,6 +39,7 @@ $(document).ready(function () {
     });
     //EDIT
     var Code_Edit_Update;
+    var Gender_update_employee;
     $(document).on('click', '#btn-click-edit-employee', function(){
         let name = $(this).attr('name');
         $.ajax({
@@ -59,9 +60,12 @@ $(document).ready(function () {
                 $('#DateOfBirth-update-employee').val(getArray.DateOfBirth);
                 if(getArray.Gender=='Nam'){
                     document.getElementById("Gender-Nam-update-employee").checked='checked';
+                    $('#Gender-Nam-update-employee').val(getArray.Gender);
                 } else if(getArray.Gender=='Nữ'){
                     document.getElementById("Gender-Nu-update-employee").checked='checked';
+                    $('#Gender-Nu-update-employee').val(getArray.Gender);
                 }
+                Gender_update_employee = getArray.Gender;
                 $('#Position-update-employee').val(getArray.Position);
                 $('#PhoneNumber-update-employee').val(getArray.PhoneNumber);
                 $('#Email-update-employee').val(getArray.Email);
@@ -74,7 +78,9 @@ $(document).ready(function () {
     $('#btn-click-update-employee').on('click', function(){
         let Name = $('#Name-update-employee').val();
         let DateOfBirth = $('#DateOfBirth-update-employee').val();
-        let Gender = $('#Gender-update-employee').val();
+
+        let Gender = $('input[name=Gender]:checked').val();
+        
         let Position = $('#Position-update-employee').val();
         let PhoneNumber = $('#PhoneNumber-update-employee').val();
         let Email = $('#Email-update-employee').val();
@@ -93,9 +99,15 @@ $(document).ready(function () {
                 Email: Email,
                 Address: Address
             },
-            success: function(){
-                alert("Cập nhật thành công !");   
-                mem_id = "";
+            success: function(data){   
+
+                alert('Cập nhật thành công!');
+
+                $('#list-employee').html(data);
+                
+                $('#modelId-update-employee').modal('hide');
+
+                Code_Edit_Update = Gender_update_employee = "";
             }
         });
     });
