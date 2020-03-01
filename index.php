@@ -35,7 +35,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
@@ -49,7 +49,7 @@
 
       <!-- Nav Item - Tables -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="index.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Admin</span></a>
       </li>
@@ -58,7 +58,7 @@
       <hr class="sidebar-divider d-none d-md-block">
       <!-- Nav Item - Tables -->
       <li class="nav-item active">
-        <a class="nav-link" href="tac-gia.html">
+        <a class="nav-link" href="tac-gia.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Tác giả</span></a>
       </li>
@@ -67,7 +67,7 @@
       <hr class="sidebar-divider d-none d-md-block">
       <!-- Nav Item - Tables -->
       <li class="nav-item active">
-        <a class="nav-link" href="san-pham.html">
+        <a class="nav-link" href="san-pham.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Sản phẩm</span></a>
       </li>
@@ -76,7 +76,7 @@
       <hr class="sidebar-divider d-none d-md-block">
       <!-- Nav Item - Tables -->
       <li class="nav-item active">
-        <a class="nav-link" href="khach-hang.html">
+        <a class="nav-link" href="khach-hang.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Khách hàng</span></a>
       </li>
@@ -85,7 +85,7 @@
       <hr class="sidebar-divider d-none d-md-block">
       <!-- Nav Item - Tables -->
       <li class="nav-item active">
-        <a class="nav-link" href="nhan-vien.html">
+        <a class="nav-link" href="nhan-vien.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Nhân viên</span></a>
       </li>
