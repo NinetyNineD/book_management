@@ -1,6 +1,8 @@
-<?php
+ưq<?php
 global $conn;
-function connect(){
+//connect database
+function connect()
+{
     global $conn;
     $servername = "localhost";
     $username = "root";
@@ -12,14 +14,19 @@ function connect(){
         mysqli_set_charset($conn,'utf8');
     }
 }
+
 // disconnect
-function disconnect (){
+function disconnect()
+{
     global $conn;
-    if ($conn){
+    if ($conn) {
         mysqli_close($conn);
     }
 }
-function addProduct($title, $category, $publisher, $year){
+
+// add product
+function addProduct($title, $category, $publisher, $year)
+{
     global $conn;
     connect();
     $sql = "insert into product( title, category , publisher, yearofpublish ) 
@@ -28,7 +35,6 @@ function addProduct($title, $category, $publisher, $year){
     return $query;
     disconnect();
 }
-
 function addAuthor($authorName, $moreInfo){
     global $conn;
     connect();
@@ -44,9 +50,18 @@ function getListOfPageIndex($table, $pageIndex){
     connect();
 	$startFromRecordIndex = ($pageIndex - 1) * getLimitRecordCountPerPage();
     $sql = "SELECT * FROM $table LIMIT $startFromRecordIndex, 10";
-    $query = mysqli_query($conn, $sql);
+:    $query = mysqli_query($conn, $sql);
 	$result = array();
     while ($row = mysqli_fetch_assoc($query)){
+//get All data
+function getAllList($table)
+{
+    global $conn;
+    connect();
+    $sql = "select * from $table order by id limit 0,10";
+    $query = mysqli_query($conn, $sql);
+    $result = array();
+    while ($row = mysqli_fetch_assoc($query)) {
         array_push($result, $row);
     }
     return $result;
@@ -89,6 +104,50 @@ function searchElement($table,$search){
     $result = array();
     while ($row = mysqli_fetch_assoc($query)){
         array_push($result,$row);
+
+//
+function countListProduct()
+{
+    global $conn;
+    connect();
+    $sql = "select count(*) as count from product ";
+    $query = mysqli_query($conn, $sql);
+    $result = mysqli_fetch_assoc($query);
+    $total = $result['count'];
+    return $total;
+
+}
+
+function pageProduct($page)
+{
+    global $conn;
+    connect();
+    settype($page, 'int');
+    $from = ($page - 1) * 10;
+    $sql = "select * from product order by id asc limit $from ,10";
+    $query = mysqli_query($conn, $sql);
+    $result = array();
+    while ($row = mysqli_fetch_assoc($query)) {
+        array_push($result, $row);
+    }
+    return $result;
+
+}
+
+//search element
+function searchProduct($table, $search)
+{
+    global $conn;
+    connect();
+    $sql = "select * from $table 
+        where title like '%" . $search . "%' or category like'%" . $search . "%' 
+        or publisher like'%" . $search . "%'
+        or yearofpublish like'%" . $search . "%'
+        order by id";
+    $query = mysqli_query($conn, $sql);
+    $result = array();
+    while ($row = mysqli_fetch_assoc($query)) {
+        array_push($result, $row);
     }
     return $result;
 }
@@ -115,9 +174,26 @@ function delete($Table, $Id_Database, $ID){
     global $conn;
     connect();
     $sql = "Delete From ".$Table." Where ".$Id_Database." = ".$ID;
+
+function updateProductById($id, $title, $category, $publisher, $year)
+{
+    global $conn;
+    connect();
+    $sql = "update product set title = '$title',category = '$category' ,publisher = '$publisher', yearofpublish = '$year'
+                where id = '$id' ";
     $query = mysqli_query($conn, $sql);
     return $query;
 }
+
+function deleteProductById($id)
+{
+    global $conn;
+    connect();
+    $sql = "delete from product where id = '$id' ";
+    $query = mysqli_query($conn, $sql);
+    return $query;
+}
+
 
 function Edit($Table, $Id_Database, $ID){
     global $conn;
@@ -157,3 +233,12 @@ function updateAuthor($id, $authorName, $moreInfo){
 	// Query blah blah
 }*/
 
+function getElemetnbyId($table, $id)
+{
+    global $conn;
+    connect();
+    $sql = "select * from $table where id = $id";
+    $query = mysqli_query($conn, $sql);
+    $result = mysqli_fetch_assoc($query);
+    return $result;
+}
