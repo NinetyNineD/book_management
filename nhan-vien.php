@@ -395,7 +395,7 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
-  <script src="js/js.js"></script>
+  <script src="js/ajax.js"></script>
   <script src="js/jquery-3.2.1.min"></script>
   <script src="http://code.jquery.com/jquery-2.1.1.js"></script>
   <style type="text/css">
