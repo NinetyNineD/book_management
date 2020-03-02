@@ -1,17 +1,4 @@
-﻿<?php
-require_once "DAO/DBConnect.php";
-$result = array();
-$recordCount = getRecordCount("authors");
-if (isset($_GET["PageNumber"]))
-	$pageNumber = $_GET["PageNumber"];
-else
-	$pageNumber = 1;
-	
-$result = getListOfPageIndex("authors", $pageNumber);
-?>
-<input type="hidden" id="pageNumber" value="<?php echo $pageNumber; ?>">
-<input type="hidden" id="pageCount" value="<?php echo (ceil($recordCount / getLimitRecordCountPerPage())); ?>">
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -34,6 +21,7 @@ $result = getListOfPageIndex("authors", $pageNumber);
   <!-- Custom styles for this template -->
   <link href="css/sb-admin-2.css" rel="stylesheet">
   <link href="css/css.css" rel="stylesheet">
+
 
 
 
@@ -131,7 +119,7 @@ $result = getListOfPageIndex("authors", $pageNumber);
           <!-- Topbar Search -->
           <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
             <div class="input-group">
-              <input type="text" id="tbSearch" class="form-control bg-light border-0 small" placeholder="Search for..."
+              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
                 aria-label="Search" aria-describedby="basic-addon2">
               <div class="input-group-append">
                 <button class="btn btn-primary" type="button">
@@ -173,7 +161,7 @@ $result = getListOfPageIndex("authors", $pageNumber);
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title">Modal title</h5>
+                  <h5 class="modal-title">Thêm mới thông tin</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -193,56 +181,19 @@ $result = getListOfPageIndex("authors", $pageNumber);
                   </form>
                 </div>
                 <div class="modal-footer">
-                  <button id="btClose" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button id="btSave" class="btn btn-primary">Save</button>
+                  <button type="btn-click-close" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="btn-click-save" class="btn btn-primary">Save</button>
                 </div>
               </div>
             </div>
           </div>
-          
-          <!-- Edit Form -->
-          <div class="modal fade" id="modelId-update" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title">Update</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group row">
-                      <label for="pwd" class="col-sm-3 col-form-label">Author Name</label>
-                      <div class="col-sm-7">
-                      	<input type="text" name="" id="tbAuthorNameUpdate" value="" class="form-control" placeholder="">
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label for="pwd" class="col-sm-3 col-form-label">More Info</label>
-                      <div class="col-sm-7">
-                      	<input type="text" name="" id="tbMoreInfoUpdate" value="" class="form-control" placeholder="">
-                      </div>
-                    </div>
-                  </form>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary" id="btUpdate">Update</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- END of Edit Form -->
-          
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
               <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
             </div>
             <div class="card-body">
-              <!--div class="table-responsive"-->
-              <div id="list-author">
+              <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
@@ -261,82 +212,39 @@ $result = getListOfPageIndex("authors", $pageNumber);
                     </tr>
                   </tfoot>
                   <tbody>
-                  <?php foreach ($result as $item){ ?>
                     <tr>
-                      <td><?php echo $item['id'] ?></td>
-                      <td><?php echo $item['AuthorName'] ?></td>
-                      <td><?php echo $item['MoreInfo'] ?></td>
+                      <td>TG0001</td>
+                      <td>Vũ Trọng Phụng</td>
+					  <td>Vũ Trọng Phụng là một nhà văn, nhà báo nổi tiếng của Việt Nam vào đầu thế kỷ 20...</td>
                       <td>
-                        <!--a name="" id="" class="btn btn-warning" href="#" role="button">Sửa</a>
-                        <a name="" id="" class="btn btn-danger" href="#" role="button">Xóa</a-->
-                        <button name="<?php echo $item['id']; ?>" id="btEdit" class="btn btn-warning" href="#" role="button" data-toggle="modal" data-target="#modelId-update">Sửa</button>
-                        <!--button name="" id="btn-click-comfirm" class="btn-click-comfirm btn btn-info" href="#" role="button"></button-->
-                        <button name="<?php echo $item['id']; ?>" id="btDelete" class="btn btn-danger" href="#" role="button">Xóa</button>
+                        <a name="" id="" class="btn btn-warning" href="#" role="button">Sửa</a>
+                        <a name="" id="" class="btn btn-danger" href="#" role="button">Xóa</a>
                       </td>
-                  <?php } ?>
+                    </tr>
+                    <tr>
+                      <td>TG0002</td>
+                      <td>Nam Cao</td>
+					  <td>Nam Cao là nhà văn hiện thực lớn (trước Cách mạng), một nhà báo kháng chiến (sau Cách mạng), một trong những nhà văn tiêu biểu nhất thế kỷ 20...</td>
+					  <td>
+                        <a name="" id="" class="btn btn-warning" href="#" role="button">Sửa</a>
+                        <a name="" id="" class="btn btn-danger" href="#" role="button">Xóa</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>TG0003</td>
+                      <td>Trần Đăng Khoa</td>
+					  <td>Trần Đăng Khoa là một nhà thơ, nhà báo, biên tập viên Tạp chí Văn nghệ Quân đội, Phó chủ tịch Hội Nhà văn Việt Nam...</td>
+					  <td>
+                        <a name="" id="" class="btn btn-warning" href="#" role="button">Sửa</a>
+                        <a name="" id="" class="btn btn-danger" href="#" role="button">Xóa</a>
+                      </td>
                     </tr>
                   </tbody>
                 </table>
               </div>
-              <!--/div-->
             </div>
-		
-        <div class="row">
-             <div class="col-sm-12 col-md-7">
-                  <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
-                                <ul class="pagination">
-                                	<!--Previous Button-->
-                                    <li class="paginate_button page-item previous <?php if ($pageNumber == 1) echo 'disabled';
-																						else echo '';?>" id="dataTable_previous">
-                                        <a href="tac-gia.php?PageNumber=<?php echo ($pageNumber - 1);?>" aria-controls="dataTable" data-dt-idx="0" tabindex="0"
-                                           class="page-link">Previous</a></li>
-                                    <?php
-										// How many page in total
-										$pageCount = ceil($recordCount / getLimitRecordCountPerPage());
-										// Calculate left pivot
-										$left = $pageNumber - floor(getLimitPaginationButtonCount() / 2);
-										// Clamp left = 1
-										if ($left < 1)
-											$left = 1;
-										// Calculate right pivot
-										$right = $left + getLimitPaginationButtonCount() - 1;
-										
-										// Calculate redundant offset
-										$temp = $pageNumber + floor(getLimitPaginationButtonCount() / 2) - $pageCount;
-										// If redundant offset > 0 => compensate left
-										if ($temp > 0){
-											$left -= $temp;
-											if ($left < 1)	// Clamp left
-												$left = 1;
-										}
-										
-										// Clamp right = $pageCount
-										if ($right > $pageCount)
-											$right = $pageCount;
-											
-										// Loop to create Pagination buttons
-										for ($i = $left; $i <= $right; $i++) {
-									?>
-                                    	 <li class="paginate_button page-item <?php if ($pageNumber == $i) echo 'active';?>"><a href="tac-gia.php?PageNumber=<?php echo $i;?>"
-                                                                                  aria-controls="dataTable"
-                                                                                  data-dt-idx="1" tabindex="0"
-                                                                                  class="page-link"><?php echo $i;?></a></li>
-                                    <?php
-										}
-									?>
-                                    <!--Next Button-->
-                                    <li class="paginate_button page-item next <?php if ($pageNumber == $pageCount) echo 'disabled';
-																					else echo '';?>" id="dataTable_next"><a href="tac-gia.php?PageNumber=<?php echo ($pageNumber + 1);?>"
-                                                                                                      aria-controls="dataTable"
-                                                                                                      data-dt-idx="7"
-                                                                                                      tabindex="0"
-                                                                                                      class="page-link">Next</a>
-                                    </li>
-                                </ul>
-                  </div>
-             </div>
-        </div>
-        
+          </div>
+
         </div>
         <!-- /.container-fluid -->
 
@@ -366,12 +274,10 @@ $result = getListOfPageIndex("authors", $pageNumber);
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="vendor/popper/popper.min.js"></script>
 
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
-  <script src="js/js.js"></script>
 </body>
 
 </html>

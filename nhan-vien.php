@@ -35,7 +35,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
@@ -49,7 +49,7 @@
 
       <!-- Nav Item - Tables -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="index.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Admin</span></a>
       </li>
@@ -58,7 +58,7 @@
       <hr class="sidebar-divider d-none d-md-block">
       <!-- Nav Item - Tables -->
       <li class="nav-item active">
-        <a class="nav-link" href="tac-gia.html">
+        <a class="nav-link" href="tac-gia.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Tác giả</span></a>
       </li>
@@ -67,7 +67,7 @@
       <hr class="sidebar-divider d-none d-md-block">
       <!-- Nav Item - Tables -->
       <li class="nav-item active">
-        <a class="nav-link" href="san-pham.html">
+        <a class="nav-link" href="san-pham.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Sản phẩm</span></a>
       </li>
@@ -76,7 +76,7 @@
       <hr class="sidebar-divider d-none d-md-block">
       <!-- Nav Item - Tables -->
       <li class="nav-item active">
-        <a class="nav-link" href="khach-hang.html">
+        <a class="nav-link" href="khach-hang.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Khách hàng</span></a>
       </li>
@@ -85,7 +85,7 @@
       <hr class="sidebar-divider d-none d-md-block">
       <!-- Nav Item - Tables -->
       <li class="nav-item active">
-        <a class="nav-link" href="nhan-vien.html">
+        <a class="nav-link" href="nhan-vien.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Nhân viên</span></a>
       </li>
@@ -151,12 +151,13 @@
           <h1 class="h3 mb-2 text-gray-800">Quản Lý Nhân Viên</h1>
           <p class="mb-4">Nguyễn Tấn Dũng</p>
           <!-- Button trigger modal -->
-          <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId">
+          <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId-add-employee">
+          	<i class="fa fa-plus-circle"></i>
             Thêm mới
           </button>
 
           <!-- Modal -->
-          <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+          <div class="modal fade" id="modelId-add-employee" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -170,58 +171,58 @@
                     <div class="form-group row">
                       <label for="pwd" class="col-sm-3 col-form-label">Họ và tên</label>
                       <div class="col-sm-7">
-                      	<input type="text" name="" id="" value="" class="form-control" placeholder="">
+                      	<input type="text" name="" id="Name-add-employee" value="" class="form-control" placeholder="">
                       </div>
                     </div>
                     <div class="form-group row">
                       <label for="pwd" class="col-sm-3 col-form-label">Ngày sinh</label>
                       <div class="col-sm-7">
-                      	<input type="text" name="" id="" value="" class="form-control" placeholder="">
+                      	<input type="text" name="" id="DateOfBirth-add-employee" value="" class="form-control" placeholder="">
                       </div>
                     </div>
                     <div class="form-group row">
                       <label for="pwd" class="col-sm-3 col-form-label">Giới tính</label>
                       <div class="col-sm-7">
-                      	<input type="radio" name="genderadd" value="Nam" placeholder="">Nam
-                        <input type="radio" name="genderadd" value="Nữ" placeholder="">Nữ
+                      	<input type="radio" name="" id="Gender-add-employee" value="Nam" placeholder="">Nam
+                        <input type="radio" name="" id="Gender-add-employee" value="Nữ" placeholder="">Nữ
                       </div>
                     </div>
                     <div class="form-group row">
                       <label for="pwd" class="col-sm-3 col-form-label">Chức vụ</label>
                       <div class="col-sm-7">
-                      	<input type="text" name="" id="" value="" class="form-control" placeholder="">
+                      	<input type="text" name="" id="Position-add-employee" value="" class="form-control" placeholder="">
                       </div>
                     </div>
                     <div class="form-group row">
                       <label for="pwd" class="col-sm-3 col-form-label">Số điện thoại</label>
                       <div class="col-sm-7">
-                      	<input type="text" name="" id="" value="" class="form-control" placeholder="">
+                      	<input type="text" name="" id="PhoneNumber-add-employee" value="" class="form-control" placeholder="">
                       </div>
                     </div>
                     <div class="form-group row">
                       <label for="pwd" class="col-sm-3 col-form-label">Email</label>
                       <div class="col-sm-7">
-                      	<input type="email" name="" id="" value="" class="form-control" placeholder="">
+                      	<input type="email" name="" id="Email-add-employee" value="" class="form-control" placeholder="">
                       </div>
                     </div>
                     <div class="form-group row">
                       <label for="pwd" class="col-sm-3 col-form-label">Địa chỉ</label>
                       <div class="col-sm-7">
-                      	<input type="text" name="" id="" value="" class="form-control" placeholder="">
+                      	<input type="text" name="" id="" value="Address-add-employee" class="form-control" placeholder="">
                       </div>
                     </div>
                   </form>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
-                  <button type="button" class="btn btn-primary">Thêm Mới</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                  <button type="button" class="btn btn-primary" id="btn-click-add-employee">Thêm Mới</button>
                 </div>
               </div>
             </div>
           </div>
           <!-- DataTales Example -->
           <!-- Edit Employee -->
-          <div class="modal fade" id="modelId_2" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+          <div class="modal fade" id="modelId-update-employee" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -235,51 +236,51 @@
                     <div class="form-group row">
                       <label for="pwd" class="col-sm-3 col-form-label">Họ và tên</label>
                       <div class="col-sm-7">
-                      	<input type="text" name="" id="" value="" class="form-control" placeholder="">
+                      	<input type="text" name="" id="Name-update-employee" value="" class="form-control" placeholder="">
                       </div>
                     </div>
                     <div class="form-group row">
                       <label for="pwd" class="col-sm-3 col-form-label">Ngày sinh</label>
                       <div class="col-sm-7">
-                      	<input type="text" name="" id="" value="" class="form-control" placeholder="">
+                      	<input type="text" name="" id="DateOfBirth-update-add-employee" value="" class="form-control" placeholder="">
                       </div>
                     </div>
                     <div class="form-group row">
                       <label for="pwd" class="col-sm-3 col-form-label">Giới tính</label>
                       <div class="col-sm-7">
-                      	<input type="radio" name="genderadd" value="Nam" placeholder="">Nam
-                        <input type="radio" name="genderadd" value="Nữ" placeholder="">Nữ
+                      	<input type="radio" name="" id="Gender-update-employee" value="Nam" placeholder="">Nam
+                        <input type="radio" name="" id="Gender-update-employee" value="Nữ" placeholder="">Nữ
                       </div>
                     </div>
                     <div class="form-group row">
                       <label for="pwd" class="col-sm-3 col-form-label">Chức vụ</label>
                       <div class="col-sm-7">
-                      	<input type="text" name="" id="" value="" class="form-control" placeholder="">
+                      	<input type="text" name="" id="Position-update-employee" value="" class="form-control" placeholder="">
                       </div>
                     </div>
                     <div class="form-group row">
                       <label for="pwd" class="col-sm-3 col-form-label">Số điện thoại</label>
                       <div class="col-sm-7">
-                      	<input type="text" name="" id="" value="" class="form-control" placeholder="">
+                      	<input type="text" name="" id="PhoneNumber-update-employee" value="" class="form-control" placeholder="">
                       </div>
                     </div>
                     <div class="form-group row">
                       <label for="pwd" class="col-sm-3 col-form-label">Email</label>
                       <div class="col-sm-7">
-                      	<input type="email" name="" id="" value="" class="form-control" placeholder="">
+                      	<input type="email" name="" id="Email-update-employee" value="" class="form-control" placeholder="">
                       </div>
                     </div>
                     <div class="form-group row">
                       <label for="pwd" class="col-sm-3 col-form-label">Địa chỉ</label>
                       <div class="col-sm-7">
-                      	<input type="text" name="" id="" value="" class="form-control" placeholder="">
+                      	<input type="text" name="" id="" value="Address-update-employee" class="form-control" placeholder="">
                       </div>
                     </div>
                   </form>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
-                  <button type="button" class="btn btn-primary">Lưu</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                  <button type="button" class="btn btn-primary" id="btn-click-update-employee">Sửa</button>
                 </div>
               </div>
             </div>
@@ -328,22 +329,14 @@
                       <td>Hà Nội</td>
                       <td>
 
-                        <a name="" id="" class="btn btn-warning" href="#" role="button" data-toggle="modal" data-target="#modelId_2">Sửa</a>
-                        <a name="" id="" class="btn btn-danger" href="#" role="button">Xóa</a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>Dương Thị Thu Huyền</td>
-                      <td>1996/12/05</td>
-                      <td>Nữ</td>
-                      <td>Nhân viên</td>
-                      <td>0312345682</td>
-                      <td>thuhuyen@gmail.com</td>
-                      <td>Hà Nam</td>
-                      <td>
-                        <a name="" id="" class="btn btn-warning" href="#" role="button" data-toggle="modal" data-target="#modelId_2">Sửa</a>
-                        <a name="" id="" class="btn btn-danger" href="#" role="button">Xóa</a>
+                        <a name="" id="" class="btn btn-warning" href="#" role="button" data-toggle="modal" data-target="#modelId-update-employee">
+                        	<i class="fa fa-pencil-alt"></i>
+                        	Sửa
+                    	</a>
+                        <a name="" id="" class="btn btn-danger" href="#" role="button">
+                        	<i class="fa fa-trash"></i>
+                        	Xóa
+                    	</a>
                       </td>
                     </tr>
                   </tbody>
