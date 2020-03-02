@@ -122,7 +122,7 @@
 		$email = $_POST['Email'];
 		$phonenumber = $_POST['PhoneNumber'];
 		$gender = $_POST['Gender'];
-		$address = $_POST['Adress'];
+		$address = $_POST['Address'];
 		if(!empty($username) && !empty($password) && !empty($name)){
 				$sql = "select UserName from admin where UserName = '$username'";
 				$query = mysqli_query($connect,$sql);
@@ -151,37 +151,37 @@
                   <form class="form-inline" method="post">
                     <div class="form-group">
                       <label for="">UserName</label>
-                      <input type="text" name="UserName" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                      <input type="text" name="UserName" id="" class="form-control" placeholder="" aria-describedby="helpId" value="<?php if(!empty($username)) echo $username; else echo ""; ?>">
                       <small id="helpId" class="text-muted">(*)</small>
                     </div>
                     <div class="form-group">
                       <label for="">PassWord</label>
-                      <input type="text" name="PassWord" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                      <input type="text" name="PassWord" id="" class="form-control" placeholder="" aria-describedby="helpId" value="<?php if(!empty($password)) echo $password; else echo ""; ?>">
                       <small id="helpId" class="text-muted">(*)</small>
                     </div>
                     <div class="form-group">
                       <label for="">Name</label>
-                      <input type="text" name="Name" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                      <input type="text" name="Name" id="" class="form-control" placeholder="" aria-describedby="helpId" value="<?php if(!empty($name)) echo $name; else echo ""; ?>">
                       <small id="helpId" class="text-muted">(*)</small>
                     </div>
                      <div class="form-group">
                       <label for="">Email</label>
-                      <input type="text" name="Email" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                      <input type="text" name="Email" id="" class="form-control" placeholder="" aria-describedby="helpId" value="<?php if(!empty($email)) echo $email; else echo ""; ?>">
                       <small id="helpId" class="text-muted"></small>
                     </div>
                      <div class="form-group">
                       <label for="">PhoneNumber</label>
-                      <input type="text" name="PhoneNumber" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                      <input type="text" name="PhoneNumber" id="" class="form-control" placeholder="" aria-describedby="helpId" value="<?php if(!empty($phonenumber)) echo $phonenumber; else echo ""; ?>">
                       <small id="helpId" class="text-muted"></small>
                     </div>
                      <div class="form-group">
                       <label for="">Gender</label>
-                      <input type="text" name="Gender" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                      <input type="text" name="Gender" id="" class="form-control" placeholder="" aria-describedby="helpId" value="<?php if(!empty($gender)) echo $gender; else echo ""; ?>">
                       <small id="helpId" class="text-muted"></small>
                     </div>
                      <div class="form-group">
                       <label for="">Address</label>
-                      <input type="text" name="Address" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                      <input type="text" name="Address" id="" class="form-control" placeholder="" aria-describedby="helpId" value="<?php if(!empty($address)) echo $address; else echo ""; ?>">
                       <small id="helpId" class="text-muted"></small>
                     </div>
                      <div class="modal-footer">
