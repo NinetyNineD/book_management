@@ -41,8 +41,8 @@ function addEmployee($Name, $DateOfBirth, $Gender, $Position, $PhoneNumber, $Ema
     $sql = "Insert Into employee( Name, DateOfBirth, Gender, Position, PhoneNumber, Email, Address ) 
               Values ('$Name', '$DateOfBirth', '$Gender', '$Position', '$PhoneNumber', '$Email', '$Address')";
     $query = mysqli_query($conn, $sql);
-    disconnect();
     return $query;
+    disconnect();
 }
 // Edit employee,...
 function Edit($Table, $Id_Database, $ID){
@@ -59,8 +59,8 @@ function updateEmployee($Code, $Name, $DateOfBirth, $Gender, $Position, $PhoneNu
     connect();
     $sql = "Update employee Set Name='$Name', DateOfBirth='$DateOfBirth', Gender='$Gender', Position='$Position', PhoneNumber='$PhoneNumber', Email='$Email', Address='$Address' Where Code=".$Code;
     $query = mysqli_query($conn, $sql);
-    disconnect();
     return $query;
+    disconnect();
     
 }
 // FUNCTION DELETE
@@ -75,7 +75,7 @@ function Delete($Table, $Id_Database, $ID){
     $sql = "Delete From ".$Table." Where ".$Id_Database." =".$ID;
     $query = mysqli_query($conn, $sql);
     return $query;
-    Disconnect();
+    disconnect();
 }
 //Search
 //Search employee

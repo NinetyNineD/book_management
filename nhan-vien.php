@@ -1,7 +1,7 @@
 <?php
-  require_once "DBConnect/DBConnect.php";
-  $result = array();
-  $result = getAllList("employee","Code");
+  //require_once "DBConnect/DBConnect.php";
+  //$result = array();
+  //$result = getAllList("employee","Code");
 ?>
 <!DOCTYPE html>
 <html lang="en">
