@@ -58,13 +58,14 @@ $(document).ready(function () {
                 method: "get",
                 data: {id: id},
                 success: function () {
-                }
+			id = '';                
+}
             });
         }
     });
     //update product
     $('.btn-click-edit-product').on('click', function () {
-        var id = $(this).attr('data-id');
+        let id = $(this).attr('data-id');
         //lấy dữ liệu
         let title = $(this).parent().prev().prev().prev().prev().text();
         let category = $(this).parent().prev().prev().prev().text();
@@ -72,7 +73,7 @@ $(document).ready(function () {
         let year = $(this).parent().prev().text();
         // alert(title);
         //đổ lên modal update
-        $('#id-up').val(id);
+        var txtId =  $('#id-up').val(id);
         $('#txt-title-up').val(title);
         $('#txt-category-up').val(category);
         $('#txt-publisher-up').val(publisher);
@@ -100,6 +101,7 @@ $(document).ready(function () {
             success: function (data) {
                 $('#list-product').html(data);
                 $('#modelIdUpdate').modal('hide');
+			id=''
             }
         });
     });
