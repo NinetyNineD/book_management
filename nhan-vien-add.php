@@ -1,5 +1,5 @@
 <?php
-require_once "DAO/DBConnect.php";
+require_once "DBConnect/DBConnect.php";
 //Lấy data từ data  file js gửi
 //$_POST['truyền key trong data(data{key:value})']
 

@@ -1,5 +1,5 @@
 <?php
-require_once "DAO/DBConnect.php";
+require_once "DBConnect/DBConnect.php";
 $Search = $_POST['Search'];
 $result = searchEmployee('employee', $Search, 'Code');
 $ouput = '';

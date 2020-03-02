@@ -1,6 +1,6 @@
 <?php
 
-	require_once 'DAO/DBConnect.php';
+	require_once 'DBConnect/DBConnect.php';
 	$Code = $_POST['Code'];	
 
 	Delete("employee", "Code", $Code);	
