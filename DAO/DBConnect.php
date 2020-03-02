@@ -130,9 +130,9 @@ class PerPage {
             $pages  = ceil($count/$this->perpage);
         if($pages>1) {
             if($_GET["page"] == 1) 
-                $output = $output . '<span class="link first disabled">&#8810;</span><span class="link disabled">&#60;</span>';
+                $output = $output . '<span class="link first disabled">Trang Đầu</span><span class="link disabled">Trước</span>';
             else    
-                $output = $output . '<a class="link first" onclick="getresult(\'' . $href . (1) . '\')" >&#8810;</a><a class="link" onclick="getresult(\'' . $href . ($_GET["page"]-1) . '\')" >&#60;</a>';
+                $output = $output . '<a class="link first" onclick="getresult(\'' . $href . (1) . '\')" >Trang Đầu</a><a class="link" onclick="getresult(\'' . $href . ($_GET["page"]-1) . '\')" >Trước</a>';
             
             
             if(($_GET["page"]-3)>0) {
@@ -165,13 +165,14 @@ class PerPage {
             }
             
             if($_GET["page"] < $pages)
-                $output = $output . '<a  class="link" onclick="getresult(\'' . $href . ($_GET["page"]+1) . '\')" >></a><a  class="link" onclick="getresult(\'' . $href . ($pages) . '\')" >&#8811;</a>';
+                $output = $output . '<a  class="link" onclick="getresult(\'' . $href . ($_GET["page"]+1) . '\')" >Tiếp</a><a  class="link" onclick="getresult(\'' . $href . ($pages) . '\')" >Trang Cuối</a>';
             else                
-                $output = $output . '<span class="link disabled">></span><span class="link disabled">&#8811;</span>';
+                $output = $output . '<span class="link disabled">Tiếp</span><span class="link disabled">Trang Cuối</span>';
             
             
         }
         return $output;
+        //Trang Cuối: &#8811;            Trang Đầu: &#8810;          Tiếp: >              Trước: &#60;
     }
 }
 ?>

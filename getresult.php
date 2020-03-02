@@ -122,7 +122,7 @@ function showPage($sql){
 	}
 	$perpageresult = showPage($sql);
 	if(!empty($perpageresult)) {
-		$output .= '<div id="pagination">' . $perpageresult . '</div>';
+		$output .= '<footer class="sticky-footer bg-white"><div class="container my-auto"><div class="copyright text-center my-auto"><div id="pagination">' . $perpageresult . '</div></div></div></footer>';
 	}
 	echo $output;
 	/*
