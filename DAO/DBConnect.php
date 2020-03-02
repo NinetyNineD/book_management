@@ -1,7 +1,7 @@
 <?php
 global $conn;
 //Connect database
-function Connect(){
+function connect(){
     global $conn;
     $servername = "localhost";
     $username = "root";
@@ -15,7 +15,7 @@ function Connect(){
     }
 }
 // Disconnect
-function Disconnect (){
+function disconnect (){
     global $conn;
     if ($conn){
         mysqli_close($conn);
@@ -24,7 +24,7 @@ function Disconnect (){
 // Get All Data
 function getAllList($Table, $ID){
     global $conn;
-    Connect();
+    connect();
     $sql = "Select * From ".$Table." order by ".$ID;
     $query = mysqli_query($conn, $sql);
     $result = array();
@@ -37,17 +37,17 @@ function getAllList($Table, $ID){
 // Add employee
 function addEmployee($Name, $DateOfBirth, $Gender, $Position, $PhoneNumber, $Email, $Address){
     global $conn;
-    Connect();
+    connect();
     $sql = "Insert Into employee( Name, DateOfBirth, Gender, Position, PhoneNumber, Email, Address ) 
               Values ('$Name', '$DateOfBirth', '$Gender', '$Position', '$PhoneNumber', '$Email', '$Address')";
     $query = mysqli_query($conn, $sql);
+    disconnect();
     return $query;
-    Disconnect();
 }
 // Edit employee,...
 function Edit($Table, $Id_Database, $ID){
     global $conn;
-    Connect();
+    connect();
     $sql = "Select * From ".$Table." Where ".$Id_Database." = ".$ID;
     $query = mysqli_query($conn, $sql);
     $result = mysqli_fetch_assoc($query);
@@ -56,11 +56,12 @@ function Edit($Table, $Id_Database, $ID){
 // Update employee
 function updateEmployee($Code, $Name, $DateOfBirth, $Gender, $Position, $PhoneNumber, $Email, $Address){
     global $conn;
-    Connect();
+    connect();
     $sql = "Update employee Set Name='$Name', DateOfBirth='$DateOfBirth', Gender='$Gender', Position='$Position', PhoneNumber='$PhoneNumber', Email='$Email', Address='$Address' Where Code=".$Code;
     $query = mysqli_query($conn, $sql);
+    disconnect();
     return $query;
-    Disconnect();
+    
 }
 // FUNCTION DELETE
 // Delete employee,...
@@ -70,7 +71,7 @@ function Delete($Table, $Id_Database, $ID){
     // $Name: là nơi mình đặt $item['$Id_Database'] ở nút Xóa khi hiện thị hay ajax - ID gắn với dữ liệu khi hiện thị
     //
     global $conn;
-    Connect();
+    connect();
     $sql = "Delete From ".$Table." Where ".$Id_Database." =".$ID;
     $query = mysqli_query($conn, $sql);
     return $query;
@@ -80,7 +81,7 @@ function Delete($Table, $Id_Database, $ID){
 //Search employee
 function searchEmployee($Table,$Search,$ID){
     global $conn;
-    Connect();
+    connect();
     $sql = "Select * From ".$Table." 
         Where Name like '%".$Search."%' 
         or DateOfBirth like'%".$Search."%' 
@@ -99,7 +100,7 @@ function searchEmployee($Table,$Search,$ID){
 }
     function runQuery($query) {
         global $conn;
-        Connect();
+        connect();
         $result = mysqli_query($conn,$query);
         while($row=mysqli_fetch_assoc($result)) {
             $resultset[] = $row;
@@ -110,7 +111,7 @@ function searchEmployee($Table,$Search,$ID){
     
     function numRows($query) {
         global $conn;
-        Connect();
+        connect();
         $result  = mysqli_query($conn,$query);
         $rowcount = mysqli_num_rows($result);
         return $rowcount;   
