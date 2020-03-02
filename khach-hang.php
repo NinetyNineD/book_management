@@ -160,8 +160,8 @@
                       <label class="col-sm-4 avc" for="address" style="font-weight: bold">Địa Chỉ</label>
                       <input class="col-sm-8 avc" type="text" name="address_customer_insert" id="address" class="form-control" placeholder="Nhập địa chỉ" aria-describedby="helpId">
 
-                      <div class="modal-footer">
-                          <input type="submit" name="INSERT" value="SAVE" style="background-color: #9afff5 ; margin-right: 10px">
+                      <div class="modal-footer" style="margin: auto">
+                          <input type="submit" name="INSERT" value="SAVE" style="background-color: #9afff5 ; text-align: center">
                       </div>
                   </form>
 
