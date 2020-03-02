@@ -7,7 +7,7 @@
 		$email = $_POST['Email'];
 		$phonenumber = $_POST['PhoneNumber'];
 		$gender = $_POST['Gender'];
-		$address = $_POST['Adress'];
+		$address = $_POST['Address'];
 		if(isset($username) && isset($password) && isset($name)){
 				$sql = "select UserName from admin where UserName = '$username'";
 				$query = mysqli_query($connect,$sql);
