@@ -2,8 +2,9 @@
 require_once "DAO/DBConnect.php";
 $tbAuthorName = $_POST['tbAuthorName'];
 $tbMoreInfo = $_POST['tbMoreInfo'];
+$pageNumber = $_POST['pageNumber'];
 addAuthor($tbAuthorName, $tbMoreInfo);
-$result = getAllList('authors');
+$result = getListOfPageIndex('authors', $pageNumber);
 $output = '';
 if (count($result) > 0) {
     $output .= '<div class="table-responsive">
@@ -33,8 +34,7 @@ if (count($result) > 0) {
                     <td>'.$item['MoreInfo'].'</td>
                     
                     <td>
-                        <button name="'.$item['id'].'" id="btn-click-edit" class="btn btn-warning" href="#" role="button">Sửa</button>
-                        <button name="" id="btn-click-comfirm" class="btn-click-comfirm btn btn-info" href="#" role="button"></button>
+                        <button name="'.$item['id'].'" id="btEdit" class="btn btn-warning" href="#" role="button" data-toggle="modal" data-target="#modelId-update">Sửa</button>
                         <button name="'.$item['id'].'" id="btDelete" class="btn btn-danger" href="#" role="button">Xóa</button>
                     </td>  
                 </tr>

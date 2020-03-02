@@ -9,6 +9,8 @@ else
 	
 $result = getListOfPageIndex("authors", $pageNumber);
 ?>
+<input type="hidden" id="pageNumber" value="<?php echo $pageNumber; ?>">
+<input type="hidden" id="pageCount" value="<?php echo (ceil($recordCount / getLimitRecordCountPerPage())); ?>">
 <!DOCTYPE html>
 <html lang="en">
 
@@ -197,6 +199,42 @@ $result = getListOfPageIndex("authors", $pageNumber);
               </div>
             </div>
           </div>
+          
+          <!-- Edit Form -->
+          <div class="modal fade" id="modelId-update" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Update</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                      <label for="pwd" class="col-sm-3 col-form-label">Author Name</label>
+                      <div class="col-sm-7">
+                      	<input type="text" name="" id="tbAuthorNameUpdate" value="" class="form-control" placeholder="">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="pwd" class="col-sm-3 col-form-label">More Info</label>
+                      <div class="col-sm-7">
+                      	<input type="text" name="" id="tbMoreInfoUpdate" value="" class="form-control" placeholder="">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" id="btUpdate">Update</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- END of Edit Form -->
+          
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
@@ -231,7 +269,7 @@ $result = getListOfPageIndex("authors", $pageNumber);
                       <td>
                         <!--a name="" id="" class="btn btn-warning" href="#" role="button">Sửa</a>
                         <a name="" id="" class="btn btn-danger" href="#" role="button">Xóa</a-->
-                        <button name="<?php echo $item['id']; ?>" id="btn-click-edit" class="btn btn-warning" href="#" role="button">Sửa</button>
+                        <button name="<?php echo $item['id']; ?>" id="btEdit" class="btn btn-warning" href="#" role="button" data-toggle="modal" data-target="#modelId-update">Sửa</button>
                         <!--button name="" id="btn-click-comfirm" class="btn-click-comfirm btn btn-info" href="#" role="button"></button-->
                         <button name="<?php echo $item['id']; ?>" id="btDelete" class="btn btn-danger" href="#" role="button">Xóa</button>
                       </td>
@@ -253,8 +291,31 @@ $result = getListOfPageIndex("authors", $pageNumber);
                                         <a href="tac-gia.php?PageNumber=<?php echo ($pageNumber - 1);?>" aria-controls="dataTable" data-dt-idx="0" tabindex="0"
                                            class="page-link">Previous</a></li>
                                     <?php
+										// How many page in total
 										$pageCount = ceil($recordCount / getLimitRecordCountPerPage());
-										for ($i = 1; $i <= $pageCount; $i++) {
+										// Calculate left pivot
+										$left = $pageNumber - floor(getLimitPaginationButtonCount() / 2);
+										// Clamp left = 1
+										if ($left < 1)
+											$left = 1;
+										// Calculate right pivot
+										$right = $left + getLimitPaginationButtonCount() - 1;
+										
+										// Calculate redundant offset
+										$temp = $pageNumber + floor(getLimitPaginationButtonCount() / 2) - $pageCount;
+										// If redundant offset > 0 => compensate left
+										if ($temp > 0){
+											$left -= $temp;
+											if ($left < 1)	// Clamp left
+												$left = 1;
+										}
+										
+										// Clamp right = $pageCount
+										if ($right > $pageCount)
+											$right = $pageCount;
+											
+										// Loop to create Pagination buttons
+										for ($i = $left; $i <= $right; $i++) {
 									?>
                                     	 <li class="paginate_button page-item <?php if ($pageNumber == $i) echo 'active';?>"><a href="tac-gia.php?PageNumber=<?php echo $i;?>"
                                                                                   aria-controls="dataTable"

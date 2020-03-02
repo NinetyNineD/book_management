@@ -107,7 +107,7 @@ function searchAuthor($search){
     return $result;
 }
 
-function Delete($Table, $Id_Database, $ID){
+function delete($Table, $Id_Database, $ID){
     // $Table: bảng 
     // $Id_Database: Tên cột khóa chính trong csdl
     // $Name: là nơi mình đặt $item['$Id_Database'] ở nút Xóa khi hiện thị hay ajax - ID gắn với dữ liệu khi hiện thị
@@ -118,3 +118,42 @@ function Delete($Table, $Id_Database, $ID){
     $query = mysqli_query($conn, $sql);
     return $query;
 }
+
+function Edit($Table, $Id_Database, $ID){
+    global $conn;
+    Connect();
+    $sql = "Select * From ".$Table." Where ".$Id_Database." = ".$ID;
+    $query = mysqli_query($conn, $sql);
+    $result = mysqli_fetch_assoc($query);
+    return $result;
+}
+
+function updateAuthor($id, $authorName, $moreInfo){
+    global $conn;
+    connect();
+    $sql = "UPDATE authors 
+			SET AuthorName='$authorName', MoreInfo='$moreInfo' 
+			WHERE id=".$id;
+    $query = mysqli_query($conn, $sql);
+    return $query;
+}
+
+/*function insert($table, $arrayColumns, $arrayField){
+	$sql = "INSERT INTO $table(";
+	for ($i = 0; $i < $arrayColumns.Length; $i++) {
+		$sql += "$arrayColumns[i]";
+		if ($i < $arrayColumns.Length - 1)
+			$sql += ",";
+	}
+	$sql += ") ";
+	$sql += "VALUES(";
+	for ($i = 0; $i < $arrayField.Length; $i++) {
+		$sql += "'$arrayField[i]'";
+		if ($i < $arrayField.Length - 1)
+			$sql += ", ";
+	}
+	$sql += ")";
+	
+	// Query blah blah
+}*/
+

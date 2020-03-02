@@ -3,9 +3,9 @@
 	$id = $_POST['id'];	
 	echo "<script>alert('Test delete! id = $id')</script>";
 
-	Delete("authors", "id", $id);	
-
-	$result = getAllList('authors');
+	delete("authors", "id", $id);	
+	$pageNumber = $_POST['pageNumber'];
+	$result = getListOfPageIndex('authors', $pageNumber);
 	//dữ liệu cần đổ ajax sẽ lấy dữ liệu mà file này echo ra rồi đổi lại html
 	$output = '';
 	if (count($result) > 0) {
@@ -36,8 +36,7 @@
                     <td>'.$item['MoreInfo'].'</td>
                     
                     <td>
-                        <button name="'.$item['id'].'" id="btn-click-edit" class="btn btn-warning" href="#" role="button">Sửa</button>
-                        <button name="" id="btn-click-comfirm" class="btn-click-comfirm btn btn-info" href="#" role="button"></button>
+                        <button name="'.$item['id'].'" id="btEdit" class="btn btn-warning" href="#" role="button" data-toggle="modal" data-target="#modelId-update">Sửa</button>
                         <button name="'.$item['id'].'" id="btDelete" class="btn btn-danger" href="#" role="button">Xóa</button>
                     </td>  
                 </tr>

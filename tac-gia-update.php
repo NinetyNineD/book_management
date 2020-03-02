@@ -1,14 +1,20 @@
 <?php
 require_once "DAO/DBConnect.php";
-$tbSearch = $_POST['search'];
+//Lấy data từ data  file js gửi
+//$_POST['truyền key trong data(data{key:value})']
+$id = $_POST['id'];
+$tbAuthorName = $_POST['tbAuthorNameUpdate'];
+$tbMoreInfo = $_POST['tbMoreInfoUpdate'];
+
+//Function update employee truyền tham số
+updateAuthor($id, $tbAuthorName, $tbMoreInfo);
+
 $pageNumber = $_POST['pageNumber'];
-if ($tbSearch != "")
-	$result = searchAuthor($tbSearch);
-else
-	$result = getListOfPageIndex('authors', $pageNumber);
+$result = getListOfPageIndex('authors', $pageNumber);
+//Dữ liệu cần đổ ajax sẽ lấy dữ liệu mà file này echo ra rồi đổi lại html
 $output = '';
 if (count($result) > 0) {
-    $output .= '<div class="table-responsive">
+   $output .= '<div class="table-responsive">
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                 <tr>
@@ -29,7 +35,7 @@ if (count($result) > 0) {
                                 <tbody>';
     foreach ($result as $item) {
         $output .= '
-                    <tr>
+                <tr>
                     <td>'.$item['id'].'</td>
                     <td>'.$item['AuthorName'].'</td>
                     <td>'.$item['MoreInfo'].'</td>
@@ -39,13 +45,13 @@ if (count($result) > 0) {
                         <button name="'.$item['id'].'" id="btDelete" class="btn btn-danger" href="#" role="button">Xóa</button>
                     </td>  
                 </tr>
-         ';
+         	';
     }
-	
     $output .= '</tbody>
              </table>
           </div>';
+
     echo $output;
 } else {
-    getAllList('authors');
+    false;
 }
