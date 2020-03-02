@@ -31,9 +31,10 @@ $(document).ready(function () {
             success: function (data) {
                 alert("Thêm nhân viên thành công !");
                 //Đổ dữ liệu
-                $('#list-employee').html(data);
+                //$('#list-employee').html(data);
                 //đóng modal
-                $('#modelId-add-employee').modal('hide');
+                //$('#modelId-add-employee').modal('hide');
+                window.location.reload();
             }
         });
     });
@@ -101,11 +102,12 @@ $(document).ready(function () {
 
                 alert('Cập nhật thành công!');
 
-                $('#list-employee').html(data);
+                //$('#list-employee').html(data);
                 
-                $('#modelId-update-employee').modal('hide');
+                //$('#modelId-update-employee').modal('hide');
 
                 Code_Edit_Update = "";
+                window.location.reload();
             }
         });
     });
@@ -122,8 +124,8 @@ $(document).ready(function () {
         success: function(data){
           alert("Xóa nhân viên thành công !");
           //đổ dữ liệu
-          $('#list-employee').html(data);
-
+          //$('#list-employee').html(data);
+          window.location.reload();
         }
       });
     })

@@ -13,7 +13,7 @@ $Address = $_POST['Address'];
 
 //Function add employee truyền tham số
 addEmployee($Name, $DateOfBirth, $Gender, $Position, $PhoneNumber, $Email, $Address);
-
+/*
 //Gọi hàm getAllList('tên bảng','khóa id') để đổ dữ liệu
 $result = getAllList("employee", "Code");
 //Dữ liệu cần đổ ajax sẽ lấy dữ liệu mà file này echo ra rồi đổi lại html
@@ -81,4 +81,5 @@ if (count($result) > 0) {
 } else {
     false;
 }
+*/
 ?>

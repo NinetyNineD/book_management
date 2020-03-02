@@ -4,7 +4,7 @@
 	$Code = $_POST['Code'];	
 
 	Delete("employee", "Code", $Code);	
-
+	/*
 	$result = getAllList('employee', 'Code');
 	//dữ liệu cần đổ ajax sẽ lấy dữ liệu mà file này echo ra rồi đổi lại html
 	$ouput = '';
@@ -71,4 +71,5 @@
 	} else {
 	    false;
 	}
+	*/
 ?>
