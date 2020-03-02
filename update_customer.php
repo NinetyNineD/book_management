@@ -48,8 +48,8 @@ if (isset($_POST['UPDATE'])){
             <td><input size="30%" type="text" name="address_customer_update"  value="<?php echo $row['ADDRESS_CUSTOMER']; ?>"></td>
         </tr>
         <tr>
-            <td></td>
-            <td><input type="submit" value="Update" name="UPDATE"></td>
+
+            <td colspan="2" style="text-align: center"><input type="submit" value="Update" name="UPDATE"></td>
         </tr>
 
     </table>
