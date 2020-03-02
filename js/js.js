@@ -143,3 +143,15 @@ $(document).ready(function () {
         }
     });
 });
+function getresult(url) {
+    $.ajax({
+        url: url,
+        type: "GET",
+        data:  {rowcount:$("#rowcount").val()},
+        success: function(data){
+            $("#pagination-result").html(data);
+        },
+        error: function() {}          
+   });
+}
+getresult("getresult.php");
