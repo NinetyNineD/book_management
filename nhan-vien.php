@@ -406,6 +406,7 @@
     .question {font-weight:bold;}
     .answer{padding-top: 10px;}
     #pagination{margin-top: 20px;padding-top: 30px;border-top: #F0F0F0 1px solid;}
+    .dot {padding: 10px 15px;background: transparent;border-right: #bccfd8 1px solid;}
   </style>
 </body>
 
