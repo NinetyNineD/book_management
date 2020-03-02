@@ -299,6 +299,10 @@
             </div>
             <div class="card-body">
               <div id="list-employee">
+                <div id="pagination-result">
+                  
+                </div>
+                <!--
                 <table class="table-bordered table-striped" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
@@ -326,31 +330,32 @@
                   </tfoot>
                   <tbody>
                     <?php  
-                      foreach ($result as $item){
+                      //foreach ($result as $item){
                     ?>
                       <tr>
-                        <td><?php echo $item['Code']; ?></td>
-                        <td><?php echo $item['Name']; ?></td>
-                        <td><?php echo $item['DateOfBirth']; ?></td>
-                        <td><?php echo $item['Gender']; ?></td>
-                        <td><?php echo $item['Position']; ?></td>
-                        <td><?php echo $item['PhoneNumber']; ?></td>
-                        <td><?php echo $item['Email']; ?></td>
-                        <td><?php echo $item['Address']; ?></td>
+                        <td><?php //echo $item['Code']; ?></td>
+                        <td><?php //echo $item['Name']; ?></td>
+                        <td><?php //echo $item['DateOfBirth']; ?></td>
+                        <td><?php //echo $item['Gender']; ?></td>
+                        <td><?php //echo $item['Position']; ?></td>
+                        <td><?php //echo $item['PhoneNumber']; ?></td>
+                        <td><?php //echo $item['Email']; ?></td>
+                        <td><?php //echo $item['Address']; ?></td>
                         <td>
-                          <button name="<?php echo $item['Code']; ?>" id="btn-click-edit-employee" class="btn btn-warning" href="#" role="button" data-toggle="modal" data-target="#modelId-update-employee">
+                          <button name="<?php //echo $item['Code']; ?>" id="btn-click-edit-employee" class="btn btn-warning" href="#" role="button" data-toggle="modal" data-target="#modelId-update-employee">
                             <i class="fa fa-pencil-alt"></i> Sửa
                           </button>
-                          <button name="<?php echo $item['Code']; ?>" id="btn-click-delete-employee" class="btn btn-danger" href="#" role="button">
+                          <button name="<?php //echo $item['Code']; ?>" id="btn-click-delete-employee" class="btn btn-danger" href="#" role="button">
                             <i class="fa fa-trash"></i>Xóa
                           </button>
                         </td>
                     <?php
-                      } 
+                      //} 
                     ?>
                     </tr>
                   </tbody>
                 </table>
+                -->
               </div>
             </div>
           </div>
@@ -392,7 +397,16 @@
   <script src="js/sb-admin-2.min.js"></script>
   <script src="js/js.js"></script>
   <script src="js/jquery-3.2.1.min"></script>
-  
+  <script src="http://code.jquery.com/jquery-2.1.1.js"></script>
+  <style type="text/css">
+    .link {padding: 10px 15px;background: transparent;border:#bccfd8 1px solid;border-left:0px;cursor:pointer;color:#607d8b}
+    .disabled {cursor:not-allowed;color: #bccfd8;}
+    .current {background: #bccfd8;}
+    .first{border-left:#bccfd8 1px solid;}
+    .question {font-weight:bold;}
+    .answer{padding-top: 10px;}
+    #pagination{margin-top: 20px;padding-top: 30px;border-top: #F0F0F0 1px solid;}
+  </style>
 </body>
 
 </html>
