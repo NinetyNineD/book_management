@@ -118,7 +118,7 @@
           <!-- Topbar Search -->
           <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
             <div class="input-group">
-              <input type="text" class="form-control bg-light border-0 small" placeholder="Tìm kiếm ..."
+              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
                 aria-label="Search" aria-describedby="basic-addon2">
               <div class="input-group-append">
                 <button class="btn btn-primary" type="button">
@@ -148,196 +148,230 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Quản Lý Nhân Viên</h1>
-          <p class="mb-4">Nguyễn Tấn Dũng</p>
+          <h1 class="h3 mb-2 text-gray-800">Admin</h1>
+          <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more
+            information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official
+              DataTables documentation</a>.</p>
           <!-- Button trigger modal -->
-          <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId-add-employee">
-          	<i class="fa fa-plus-circle"></i>
+          <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId">
             Thêm mới
           </button>
 
           <!-- Modal -->
-          <div class="modal fade" id="modelId-add-employee" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+          <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title">Thêm nhân viên mới</h5>
+                  <h5 class="modal-title">Modal title</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
                 <div class="modal-body">
-                    <div class="form-group row">
-                      <label for="pwd" class="col-sm-3 col-form-label">Họ và tên</label>
-                      <div class="col-sm-7">
-                      	<input type="text" name="" id="Name-add-employee" value="" class="form-control" placeholder="">
-                      </div>
+                  <form class="form-inline">
+                    <div class="form-group">
+                      <label for="">Họ và tên</label>
+                      <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                      <small id="helpId" class="text-muted">Help text</small>
                     </div>
-                    <div class="form-group row">
-                      <label for="pwd" class="col-sm-3 col-form-label">Ngày sinh</label>
-                      <div class="col-sm-7">
-                      	<input type="text" name="" id="DateOfBirth-add-employee" value="" class="form-control" placeholder="">
-                      </div>
+                    <div class="form-group">
+                      <label for="">Họ và tên</label>
+                      <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                      <small id="helpId" class="text-muted">Help text</small>
                     </div>
-                    <div class="form-group row">
-                      <label for="pwd" class="col-sm-3 col-form-label">Giới tính</label>
-                      <div class="col-sm-7">
-                      	<input type="radio" name="" id="Gender-add-employee" value="Nam" placeholder="">Nam
-                        <input type="radio" name="" id="Gender-add-employee" value="Nữ" placeholder="">Nữ
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label for="pwd" class="col-sm-3 col-form-label">Chức vụ</label>
-                      <div class="col-sm-7">
-                      	<input type="text" name="" id="Position-add-employee" value="" class="form-control" placeholder="">
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label for="pwd" class="col-sm-3 col-form-label">Số điện thoại</label>
-                      <div class="col-sm-7">
-                      	<input type="text" name="" id="PhoneNumber-add-employee" value="" class="form-control" placeholder="">
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label for="pwd" class="col-sm-3 col-form-label">Email</label>
-                      <div class="col-sm-7">
-                      	<input type="email" name="" id="Email-add-employee" value="" class="form-control" placeholder="">
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label for="pwd" class="col-sm-3 col-form-label">Địa chỉ</label>
-                      <div class="col-sm-7">
-                      	<input type="text" name="" id="" value="Address-add-employee" class="form-control" placeholder="">
-                      </div>
+                    <div class="form-group">
+                      <label for="">Họ và tên</label>
+                      <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                      <small id="helpId" class="text-muted">Help text</small>
                     </div>
                   </form>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-                  <button type="button" class="btn btn-primary" id="btn-click-add-employee">Thêm Mới</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save</button>
                 </div>
               </div>
             </div>
           </div>
           <!-- DataTales Example -->
-          <!-- Edit Employee -->
-          <div class="modal fade" id="modelId-update-employee" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title">Sửa thông tin nhân viên</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group row">
-                      <label for="pwd" class="col-sm-3 col-form-label">Họ và tên</label>
-                      <div class="col-sm-7">
-                      	<input type="text" name="" id="Name-update-employee" value="" class="form-control" placeholder="">
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label for="pwd" class="col-sm-3 col-form-label">Ngày sinh</label>
-                      <div class="col-sm-7">
-                      	<input type="text" name="" id="DateOfBirth-update-add-employee" value="" class="form-control" placeholder="">
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label for="pwd" class="col-sm-3 col-form-label">Giới tính</label>
-                      <div class="col-sm-7">
-                      	<input type="radio" name="" id="Gender-update-employee" value="Nam" placeholder="">Nam
-                        <input type="radio" name="" id="Gender-update-employee" value="Nữ" placeholder="">Nữ
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label for="pwd" class="col-sm-3 col-form-label">Chức vụ</label>
-                      <div class="col-sm-7">
-                      	<input type="text" name="" id="Position-update-employee" value="" class="form-control" placeholder="">
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label for="pwd" class="col-sm-3 col-form-label">Số điện thoại</label>
-                      <div class="col-sm-7">
-                      	<input type="text" name="" id="PhoneNumber-update-employee" value="" class="form-control" placeholder="">
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label for="pwd" class="col-sm-3 col-form-label">Email</label>
-                      <div class="col-sm-7">
-                      	<input type="email" name="" id="Email-update-employee" value="" class="form-control" placeholder="">
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label for="pwd" class="col-sm-3 col-form-label">Địa chỉ</label>
-                      <div class="col-sm-7">
-                      	<input type="text" name="" id="" value="Address-update-employee" class="form-control" placeholder="">
-                      </div>
-                    </div>
-                  </form>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-                  <button type="button" class="btn btn-primary" id="btn-click-update-employee">Sửa</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Edit Employee -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Danh sách nhân viên</h6>
+              <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
-                <table class="table-bordered table-striped" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Mã</th>
-                      <th>Họ tên</th>
-                      <th>Ngày sinh</th>
-                      <th>Giới tính</th>
-                      <th>Chức vụ</th>
-                      <th>Điện thoại</th>
-                      <th>Email</th>
-                      <th>Địa chỉ</th>
+                      <th>Name</th>
+                      <th>Position</th>
+                      <th>Office</th>
+                      <th>Age</th>
+                      <th>Start date</th>
+                      <th>Salary</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
-                      <th>Mã</th>
-                      <th>Họ tên</th>
-                      <th>Ngày sinh</th>
-                      <th>Giới tính</th>
-                      <th>Chức vụ</th>
-                      <th>Điện thoại</th>
-                      <th>Email</th>
-                      <th>Địa chỉ</th>
+                      <th>Name</th>
+                      <th>Position</th>
+                      <th>Office</th>
+                      <th>Age</th>
+                      <th>Start date</th>
+                      <th>Salary</th>
+                      <th>Action</th>
                     </tr>
                   </tfoot>
                   <tbody>
                     <tr>
-                      <td>1</td>
-                      <td>Nguyễn Thành Công</td>
-                      <td>1992/03/25</td>
-                      <td>Nam</td>
-                      <td>Quản lý</td>
-                      <td>0356458952</td>
-                      <td>thanhcong@gmail.com</td>
-                      <td>Hà Nội</td>
+                      <td>Tiger Nixon</td>
+                      <td>System Architect</td>
+                      <td>Edinburgh</td>
+                      <td>61</td>
+                      <td>2011/04/25</td>
+                      <td>$320,800</td>
                       <td>
-
-                        <a name="" id="" class="btn btn-warning" href="#" role="button" data-toggle="modal" data-target="#modelId-update-employee">
-                        	<i class="fa fa-pencil-alt"></i>
-                        	Sửa
-                    	</a>
-                        <a name="" id="" class="btn btn-danger" href="#" role="button">
-                        	<i class="fa fa-trash"></i>
-                        	Xóa
-                    	</a>
+                        <a name="" id="" class="btn btn-warning" href="#" role="button">Sửa</a>
+                        <a name="" id="" class="btn btn-danger" href="#" role="button">Xóa</a>
                       </td>
+                    </tr>
+                    <tr>
+                      <td>Garrett Winters</td>
+                      <td>Accountant</td>
+                      <td>Tokyo</td>
+                      <td>63</td>
+                      <td>2011/07/25</td>
+                      <td>$170,750</td>
+                    </tr>
+                    <tr>
+                      <td>Ashton Cox</td>
+                      <td>Junior Technical Author</td>
+                      <td>San Francisco</td>
+                      <td>66</td>
+                      <td>2009/01/12</td>
+                      <td>$86,000</td>
+                    </tr>
+                    <tr>
+                      <td>Cedric Kelly</td>
+                      <td>Senior Javascript Developer</td>
+                      <td>Edinburgh</td>
+                      <td>22</td>
+                      <td>2012/03/29</td>
+                      <td>$433,060</td>
+                    </tr>
+                    <tr>
+                      <td>Airi Satou</td>
+                      <td>Accountant</td>
+                      <td>Tokyo</td>
+                      <td>33</td>
+                      <td>2008/11/28</td>
+                      <td>$162,700</td>
+                    </tr>
+                    <tr>
+                      <td>Brielle Williamson</td>
+                      <td>Integration Specialist</td>
+                      <td>New York</td>
+                      <td>61</td>
+                      <td>2012/12/02</td>
+                      <td>$372,000</td>
+                    </tr>
+                    <tr>
+                      <td>Herrod Chandler</td>
+                      <td>Sales Assistant</td>
+                      <td>San Francisco</td>
+                      <td>59</td>
+                      <td>2012/08/06</td>
+                      <td>$137,500</td>
+                    </tr>
+                    <tr>
+                      <td>Rhona Davidson</td>
+                      <td>Integration Specialist</td>
+                      <td>Tokyo</td>
+                      <td>55</td>
+                      <td>2010/10/14</td>
+                      <td>$327,900</td>
+                    </tr>
+                    <tr>
+                      <td>Colleen Hurst</td>
+                      <td>Javascript Developer</td>
+                      <td>San Francisco</td>
+                      <td>39</td>
+                      <td>2009/09/15</td>
+                      <td>$205,500</td>
+                    </tr>
+                    <tr>
+                      <td>Sonya Frost</td>
+                      <td>Software Engineer</td>
+                      <td>Edinburgh</td>
+                      <td>23</td>
+                      <td>2008/12/13</td>
+                      <td>$103,600</td>
+                    </tr>
+                    <tr>
+                      <td>Jena Gaines</td>
+                      <td>Office Manager</td>
+                      <td>London</td>
+                      <td>30</td>
+                      <td>2008/12/19</td>
+                      <td>$90,560</td>
+                    </tr>
+                    <tr>
+                      <td>Quinn Flynn</td>
+                      <td>Support Lead</td>
+                      <td>Edinburgh</td>
+                      <td>22</td>
+                      <td>2013/03/03</td>
+                      <td>$342,000</td>
+                    </tr>
+                    <tr>
+                      <td>Charde Marshall</td>
+                      <td>Regional Director</td>
+                      <td>San Francisco</td>
+                      <td>36</td>
+                      <td>2008/10/16</td>
+                      <td>$470,600</td>
+                    </tr>
+                    <tr>
+                      <td>Haley Kennedy</td>
+                      <td>Senior Marketing Designer</td>
+                      <td>London</td>
+                      <td>43</td>
+                      <td>2012/12/18</td>
+                      <td>$313,500</td>
+                    </tr>
+                    <tr>
+                      <td>Tatyana Fitzpatrick</td>
+                      <td>Regional Director</td>
+                      <td>London</td>
+                      <td>19</td>
+                      <td>2010/03/17</td>
+                      <td>$385,750</td>
+                    </tr>
+                    <tr>
+                      <td>Michael Silva</td>
+                      <td>Marketing Designer</td>
+                      <td>London</td>
+                      <td>66</td>
+                      <td>2012/11/27</td>
+                      <td>$198,500</td>
+                    </tr>
+                    <tr>
+                      <td>Paul Byrd</td>
+                      <td>Chief Financial Officer (CFO)</td>
+                      <td>New York</td>
+                      <td>64</td>
+                      <td>2010/06/09</td>
+                      <td>$725,000</td>
+                    </tr>
+                    <tr>
+                      <td>Gloria Little</td>
+                      <td>Systems Administrator</td>
+                      <td>New York</td>
+                      <td>59</td>
+                      <td>2009/04/10</td>
+                      <td>$237,500</td>
                     </tr>
                   </tbody>
                 </table>
