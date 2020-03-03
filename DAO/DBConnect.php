@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 global $conn;
 function connect(){
     global $conn;
@@ -43,7 +43,8 @@ function getListOfPageIndex($table, $pageIndex){
 	global $conn;
     connect();
 	$startFromRecordIndex = ($pageIndex - 1) * getLimitRecordCountPerPage();
-    $sql = "SELECT * FROM $table LIMIT $startFromRecordIndex, 10";
+	$limitRecord = getLimitRecordCountPerPage();
+    $sql = "SELECT * FROM $table LIMIT $startFromRecordIndex, $limitRecord";
     $query = mysqli_query($conn, $sql);
 	$result = array();
     while ($row = mysqli_fetch_assoc($query)){
@@ -61,9 +62,14 @@ function getRecordCount($table){
 	return $row['total'];
 }
 
+function getLimitPaginationButtonCount() {
+	return 5;
+}
+
 function getLimitRecordCountPerPage(){
 	return 10;
 }
+
 function getAllList($table){
     global $conn;
     connect();
