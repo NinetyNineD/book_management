@@ -19,6 +19,70 @@ function disconnect (){
         mysqli_close($conn);
     }
 }
+//
+//
+//
+//=========================================================_PRODUCT_===========================================
+function searchProduct($table, $search)
+{
+    global $conn;
+    connect();
+    $sql = "select * from $table 
+        where title like '%" . $search . "%' or category like'%" . $search . "%' 
+        or publisher like'%" . $search . "%'
+        or yearofpublish like'%" . $search . "%'
+        order by id";
+    $query = mysqli_query($conn, $sql);
+    $result = array();
+    while ($row = mysqli_fetch_assoc($query)) {
+        array_push($result, $row);
+    }
+    return $result;
+}
+function updateProductById($id, $title, $category, $publisher, $year)
+{
+    global $conn;
+    connect();
+    $sql = "update product set title = '$title',category = '$category' ,publisher = '$publisher', yearofpublish = '$year'
+                where id = '$id' ";
+    $query = mysqli_query($conn, $sql);
+    return $query;
+}
+
+function deleteProductById($id)
+{
+    global $conn;
+    connect();
+    $sql = "delete from product where id = '$id' ";
+    $query = mysqli_query($conn, $sql);
+    return $query;
+}
+function countListProduct()
+{
+    global $conn;
+    connect();
+    $sql = "select count(*) as count from product ";
+    $query = mysqli_query($conn, $sql);
+    $result = mysqli_fetch_assoc($query);
+    $total = $result['count'];
+    return $total;
+
+}
+function pageProduct($page)
+{
+    global $conn;
+    connect();
+    settype($page, 'int');
+    $from = ($page - 1) * 10;
+    $sql = "select * from product order by id asc limit $from ,10";
+    $query = mysqli_query($conn, $sql);
+    $result = array();
+    while ($row = mysqli_fetch_assoc($query)) {
+        array_push($result, $row);
+    }
+    return $result;
+
+}
 function addProduct($title, $category, $publisher, $year){
     global $conn;
     connect();
@@ -28,7 +92,34 @@ function addProduct($title, $category, $publisher, $year){
     return $query;
     disconnect();
 }
+function getAllList($table)
+{
+    global $conn;
+    connect();
+    $sql = "select * from $table order by id limit 0,10";
+    $query = mysqli_query($conn, $sql);
+    $result = array();
+    while ($row = mysqli_fetch_assoc($query)) {
+        array_push($result, $row);
+    }
+    return $result;
+}
 
+function getElemetnbyId($table, $id)
+{
+    global $conn;
+    connect();
+    $sql = "select * from $table where id = $id";
+    $query = mysqli_query($conn, $sql);
+    $result = mysqli_fetch_assoc($query);
+    return $result;
+}
+//
+//
+//
+//
+//
+//                ======================================_AUTHOR_===========================================
 function addAuthor($authorName, $moreInfo){
     global $conn;
     connect();
@@ -70,34 +161,6 @@ function getLimitRecordCountPerPage(){
 	return 10;
 }
 
-function getAllList($table){
-    global $conn;
-    connect();
-    $sql = "select * from $table order by id";
-    $query = mysqli_query($conn, $sql);
-    $result = array();
-    while ($row = mysqli_fetch_assoc($query)){
-        array_push($result, $row);
-    }
-    return $result;
-}
-
-//search element
-function searchElement($table,$search){
-    global $conn;
-    connect();
-    $sql = "select * from $table 
-        where title like '%".$search."%' or category like'%".$search."%' 
-        or publisher like'%".$search."%'
-        or yearofpublish like'%".$search."%'
-        order by id";
-    $query = mysqli_query($conn,$sql);
-    $result = array();
-    while ($row = mysqli_fetch_assoc($query)){
-        array_push($result,$row);
-    }
-    return $result;
-}
 
 function searchAuthor($search){
     global $conn;
