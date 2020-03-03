@@ -224,9 +224,9 @@
                             <td><?php echo $row["PHONE_CUSTOMER"] ?></td>
                             <td><?php echo $row["EMAIL_CUSTOMER"] ?></td>
                             <td><?php echo $row["ADDRESS_CUSTOMER"] ?></td>
-                            <td><a href="update_customer.php?ID_CUSTOMER=<?php echo $row['ID_CUSTOMER'] ?>">Update</a></td>
+                            <td><a href="update_khach_hang.php?ID_CUSTOMER=<?php echo $row['ID_CUSTOMER'] ?>">Update</a></td>
 
-                            <td><a href="delete_customer.php?ID_CUSTOMER=<?php echo $row['ID_CUSTOMER']?>" onclick="if(confirm('Do you Sure ?')) return true; else return false">Delete</a></td>
+                            <td><a href="delete_khach_hang.php?ID_CUSTOMER=<?php echo $row['ID_CUSTOMER']?>" onclick="if(confirm('Do you Sure ?')) return true; else return false">Delete</a></td>
                         </tr>
                     <?php } ?>
                 </table>
