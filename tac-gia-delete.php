@@ -1,7 +1,7 @@
 <?php
 	require_once 'DAO/DBConnect.php';
 	$id = $_POST['id'];	
-	echo "<script>alert('Test delete! id = $id')</script>";
+	echo "<script>alert('Bạn đã xóa thành công! ')</script>";
 
 	delete("authors", "id", $id);	
 	$pageNumber = $_POST['pageNumber'];
