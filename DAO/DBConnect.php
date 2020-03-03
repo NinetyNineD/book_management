@@ -50,18 +50,11 @@ function getListOfPageIndex($table, $pageIndex){
     $query = mysqli_query($conn, $sql);
 	$result = array();
     while ($row = mysqli_fetch_assoc($query)){
-function getAllList($table)
-{
-    global $conn;
-    connect();
-    $sql = "select * from $table order by id limit 0,10";
-    $query = mysqli_query($conn, $sql);
-    $result = array();
-    while ($row = mysqli_fetch_assoc($query)){
         array_push($result, $row);
     }
     return $result;
 }
+
 function getRecordCount($table){
 	global $conn;
     connect();
@@ -75,7 +68,8 @@ function getRecordCount($table){
 function getLimitRecordCountPerPage(){
 	return 10;
 }
-function getAllList($table){
+
+/*function getAllList($table){
     global $conn;
     connect();
     $sql = "select * from $table order by id";
@@ -83,6 +77,19 @@ function getAllList($table){
     $result = array();
     while ($row = mysqli_fetch_assoc($query)){
         array_push($result, $row);
+    }
+    return $result;
+}*/
+
+function getAllList($table)
+{
+    global $conn;
+    connect();
+    $sql = "select * from $table order by id limit 0,10";
+    $query = mysqli_query($conn, $sql);
+    $result = array();
+    while ($row = mysqli_fetch_assoc($query)){
+	array_push($result, $row);
     }
     return $result;
 }
@@ -130,6 +137,7 @@ function searchProduct($table, $search)
     $result = array();
     while ($row = mysqli_fetch_assoc($query)) {
         array_push($result, $row);
+    }
     return $result;
 }
 
@@ -140,6 +148,7 @@ function searchAuthor($search){
         WHERE AuthorName like '%".$search."%' OR MoreInfo like'%".$search."%' 
         ORDER BY id";
     $query = mysqli_query($conn,$sql);
+    $result = array();
     while ($row = mysqli_fetch_assoc($query)){
         array_push($result,$row);
     }
@@ -155,7 +164,9 @@ function delete($Table, $Id_Database, $ID){
     connect();
     $sql = "Delete From ".$Table." Where ".$Id_Database." = ".$ID;
     $query = mysqli_query($conn,$sql);
-    return $query;}
+    return $query;
+}
+
 function updateProductById($id, $title, $category, $publisher, $year)
 {
     global $conn;
