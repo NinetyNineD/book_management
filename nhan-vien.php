@@ -1,3 +1,8 @@
+<?php
+  //require_once "DBConnect/DBConnect.php";
+  //$result = array();
+  //$result = getAllList("employee","Code");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,7 +40,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
@@ -49,7 +54,7 @@
 
       <!-- Nav Item - Tables -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="index.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Admin</span></a>
       </li>
@@ -58,7 +63,7 @@
       <hr class="sidebar-divider d-none d-md-block">
       <!-- Nav Item - Tables -->
       <li class="nav-item active">
-        <a class="nav-link" href="tac-gia.html">
+        <a class="nav-link" href="tac-gia.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Tác giả</span></a>
       </li>
@@ -67,7 +72,7 @@
       <hr class="sidebar-divider d-none d-md-block">
       <!-- Nav Item - Tables -->
       <li class="nav-item active">
-        <a class="nav-link" href="san-pham.html">
+        <a class="nav-link" href="san-pham.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Sản phẩm</span></a>
       </li>
@@ -76,7 +81,7 @@
       <hr class="sidebar-divider d-none d-md-block">
       <!-- Nav Item - Tables -->
       <li class="nav-item active">
-        <a class="nav-link" href="khach-hang.html">
+        <a class="nav-link" href="khach-hang.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Khách hàng</span></a>
       </li>
@@ -85,7 +90,7 @@
       <hr class="sidebar-divider d-none d-md-block">
       <!-- Nav Item - Tables -->
       <li class="nav-item active">
-        <a class="nav-link" href="nhan-vien.html">
+        <a class="nav-link" href="nhan-vien.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Nhân viên</span></a>
       </li>
@@ -118,12 +123,14 @@
           <!-- Topbar Search -->
           <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
             <div class="input-group">
-              <input type="text" class="form-control bg-light border-0 small" placeholder="Tìm kiếm ..."
+              <input type="text" class="form-control bg-light border-0 small" id="Search" placeholder="Tìm kiếm ..."
                 aria-label="Search" aria-describedby="basic-addon2">
               <div class="input-group-append">
+                <!--
                 <button class="btn btn-primary" type="button">
                   <i class="fas fa-search fa-sm"></i>
                 </button>
+                -->
               </div>
             </div>
           </form>
@@ -177,14 +184,14 @@
                     <div class="form-group row">
                       <label for="pwd" class="col-sm-3 col-form-label">Ngày sinh</label>
                       <div class="col-sm-7">
-                      	<input type="text" name="" id="DateOfBirth-add-employee" value="" class="form-control" placeholder="">
+                      	<input type="date" name="" id="DateOfBirth-add-employee" value="" class="form-control" placeholder="">
                       </div>
                     </div>
                     <div class="form-group row">
                       <label for="pwd" class="col-sm-3 col-form-label">Giới tính</label>
                       <div class="col-sm-7">
-                      	<input type="radio" name="" id="Gender-add-employee" value="Nam" placeholder="">Nam
-                        <input type="radio" name="" id="Gender-add-employee" value="Nữ" placeholder="">Nữ
+                      	<input type="radio" name="Gender" id="Gender-add-employee" value="Nam" placeholder="">Nam
+                        <input type="radio" name="Gender" id="Gender-add-employee" value="Nữ" placeholder="">Nữ
                       </div>
                     </div>
                     <div class="form-group row">
@@ -208,7 +215,7 @@
                     <div class="form-group row">
                       <label for="pwd" class="col-sm-3 col-form-label">Địa chỉ</label>
                       <div class="col-sm-7">
-                      	<input type="text" name="" id="" value="Address-add-employee" class="form-control" placeholder="">
+                      	<input type="text" name="" id="Address-add-employee" value="" class="form-control" placeholder="">
                       </div>
                     </div>
                   </form>
@@ -242,14 +249,14 @@
                     <div class="form-group row">
                       <label for="pwd" class="col-sm-3 col-form-label">Ngày sinh</label>
                       <div class="col-sm-7">
-                      	<input type="text" name="" id="DateOfBirth-update-add-employee" value="" class="form-control" placeholder="">
+                      	<input type="date" name="" id="DateOfBirth-update-employee" value="" class="form-control" placeholder="">
                       </div>
                     </div>
                     <div class="form-group row">
                       <label for="pwd" class="col-sm-3 col-form-label">Giới tính</label>
                       <div class="col-sm-7">
-                      	<input type="radio" name="" id="Gender-update-employee" value="Nam" placeholder="">Nam
-                        <input type="radio" name="" id="Gender-update-employee" value="Nữ" placeholder="">Nữ
+                      	<input type="radio" name="Gender" id="Gender-Nam-update-employee" value="Nam" placeholder="">Nam
+                        <input type="radio" name="Gender" id="Gender-Nu-update-employee" value="Nữ" placeholder="">Nữ
                       </div>
                     </div>
                     <div class="form-group row">
@@ -273,14 +280,14 @@
                     <div class="form-group row">
                       <label for="pwd" class="col-sm-3 col-form-label">Địa chỉ</label>
                       <div class="col-sm-7">
-                      	<input type="text" name="" id="" value="Address-update-employee" class="form-control" placeholder="">
+                      	<input type="text" name="" id="Address-update-employee" value="" class="form-control" placeholder="">
                       </div>
                     </div>
                   </form>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-                  <button type="button" class="btn btn-primary" id="btn-click-update-employee">Sửa</button>
+                  <button type="button" class="btn btn-primary" id="btn-click-update-employee">Cập nhật</button>
                 </div>
               </div>
             </div>
@@ -291,7 +298,11 @@
               <h6 class="m-0 font-weight-bold text-primary">Danh sách nhân viên</h6>
             </div>
             <div class="card-body">
-              <div class="table-responsive">
+              <div id="list-employee">
+                <div id="pagination-result">
+                  
+                </div>
+                <!--
                 <table class="table-bordered table-striped" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
@@ -318,29 +329,33 @@
                     </tr>
                   </tfoot>
                   <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>Nguyễn Thành Công</td>
-                      <td>1992/03/25</td>
-                      <td>Nam</td>
-                      <td>Quản lý</td>
-                      <td>0356458952</td>
-                      <td>thanhcong@gmail.com</td>
-                      <td>Hà Nội</td>
-                      <td>
-
-                        <a name="" id="" class="btn btn-warning" href="#" role="button" data-toggle="modal" data-target="#modelId-update-employee">
-                        	<i class="fa fa-pencil-alt"></i>
-                        	Sửa
-                    	</a>
-                        <a name="" id="" class="btn btn-danger" href="#" role="button">
-                        	<i class="fa fa-trash"></i>
-                        	Xóa
-                    	</a>
-                      </td>
+                    <?php  
+                      //foreach ($result as $item){
+                    ?>
+                      <tr>
+                        <td><?php //echo $item['Code']; ?></td>
+                        <td><?php //echo $item['Name']; ?></td>
+                        <td><?php //echo $item['DateOfBirth']; ?></td>
+                        <td><?php //echo $item['Gender']; ?></td>
+                        <td><?php //echo $item['Position']; ?></td>
+                        <td><?php //echo $item['PhoneNumber']; ?></td>
+                        <td><?php //echo $item['Email']; ?></td>
+                        <td><?php //echo $item['Address']; ?></td>
+                        <td>
+                          <button name="<?php //echo $item['Code']; ?>" id="btn-click-edit-employee" class="btn btn-warning" href="#" role="button" data-toggle="modal" data-target="#modelId-update-employee">
+                            <i class="fa fa-pencil-alt"></i> Sửa
+                          </button>
+                          <button name="<?php //echo $item['Code']; ?>" id="btn-click-delete-employee" class="btn btn-danger" href="#" role="button">
+                            <i class="fa fa-trash"></i>Xóa
+                          </button>
+                        </td>
+                    <?php
+                      //} 
+                    ?>
                     </tr>
                   </tbody>
                 </table>
+                -->
               </div>
             </div>
           </div>
@@ -355,7 +370,9 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-
+            <!--Phân Trang-->
+            
+            <!--END-->
           </div>
         </div>
       </footer>
@@ -378,6 +395,19 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
+  <script src="js/ajax.js"></script>
+  <script src="js/jquery-3.2.1.min"></script>
+  <script src="http://code.jquery.com/jquery-2.1.1.js"></script>
+  <style type="text/css">
+    .link {padding: 10px 15px;background: transparent;border:#bccfd8 1px solid;border-left:0px;cursor:pointer;color:#607d8b}
+    .disabled {cursor:not-allowed;color: #bccfd8;}
+    .current {background: #bccfd8;}
+    .first{border-left:#bccfd8 1px solid;}
+    .question {font-weight:bold;}
+    .answer{padding-top: 10px;}
+    #pagination{margin-top: 20px;padding-top: 30px;border-top: #F0F0F0 1px solid;}
+    .dot {padding: 10px 15px;background: transparent;border-right: #bccfd8 1px solid;}
+  </style>
 </body>
 
 </html>
