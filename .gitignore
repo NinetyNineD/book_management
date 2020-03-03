@@ -1,0 +1,92 @@
+# Được tạo bởi https://www.gitignore.io/api/phpstorm
+# Chỉnh sửa tại https://www.gitignore.io/?temsheet=phpstorm
+
+### PhpStorm ###
+# Bao gồm các IDE JetBrains: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio và WebStorm
+# Tham khảo: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
+
+# Công cụ dành riêng cho người dùng
+.idea / ** / workspace.xml
+.idea / ** / task.xml
+.idea / ** / cách sử dụng.statistic.xml
+.idea / ** / từ điển
+.idea / ** / kệ
+
+# Tạo tập tin
+.idea / ** / contentModel.xml
+
+# Các tệp nhạy cảm hoặc cao
+.idea / ** / dataSource /
+.idea / ** / dataSource.ids
+.idea / ** / dataSource.local.xml
+.idea / ** / sqlDataSource.xml
+.idea / ** / Dynamic.xml
+.idea / ** / uiDesigner.xml
+.idea / ** / dbnavigator.xml
+
+# Lớp
+.idea / ** / gradle.xml
+.idea / ** / thư viện
+
+# Gradle và Maven với nhập tự động
+# Khi sử dụng Gradle hoặc Maven với tự động nhập, bạn nên loại trừ các tệp mô-đun,
+# vì chúng sẽ được tạo lại và có thể gây ra khuấy. Uncomment nếu sử dụng
+# tự động nhập.
+# .idea / mô-đun
+# .idea / *. iml
+# .idea / mô-đun
+# * .iml
+# * .ipr
+
+# CMake
+xây dựng cmake - * /
+
+# Trình cắm Mongo Explorer
+.idea / ** / mongoSinstall.xml
+
+# Định dạng dự án dựa trên tệp
+*.
+
+# IntelliJ
+ngoài/
+
+# mpeltonen / sbt-plugin plugin
+.idea_modules /
+
+# Plugin JIRA
+atlassian-ide-plugin.xml
+
+# Plugin Clojure đáng nguyền rủa
+.idea / replstate.xml
+
+Plugin # Crashlytics (dành cho Android Studio và IntelliJ)
+com_crashlytics_export_strings.xml
+crashlytics.properies
+crashlytics-build.properies
+vải. sản phẩm
+
+# Phần còn lại dựa trên trình soạn thảo
+.idea / httpRequests
+
+# Android studio 3.1+ tệp bộ nhớ cache được tuần tự hóa
+.idea / caches / build_file_checksums.ser
+
+### PhpStorm Patch ###
+# Bình luận Lý do: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-215987721
+
+# * .iml
+# mô-đun
+# .idea / misc.xml
+# * .ipr
+
+# Plugin Sonarlint
+.idea / ** / sonarlint /
+
+# SonarQube Plugin
+.idea / ** / sonarIssues.xml
+
+# Plugin Markdown Navigator
+.idea / ** / markdown-navigator.xml
+.idea / ** / markdown-hoa tiêu /
+
+# Kết thúc https://www.gitignore.io/api/phpstorm
