@@ -10,7 +10,7 @@ $txtPublisher = $_GET['txtPublisher'];
 
 $txtYear = $_GET['txtYear'];
 
-$test=updateProductById($id, $txtTitle, $txtCategory, $txtPublisher, $txtYear);
+updateProductById($id, $txtTitle, $txtCategory, $txtPublisher, $txtYear);
 
 //gọi hàm getAllList('tên bảng') để đổ dữ liệu
 $result = getAllList('product');
@@ -51,7 +51,7 @@ if (count($result) > 0) {
                     <td>
                         <button data-id = "' . $item['id'] . '" class="btn-click-edit-product btn btn-warning"
                                                 role="button" data-toggle="modal" data-target="#modelIdUpdate">
-                                            <i class="fa fa-pencil-alt">Sửa</i>
+                                            <i class="fa fa-pencil-alt"></i>Sửa
                         </button>
 
                         <button data-id = "' . $item['id'] . '" class="btn-click-delete-product btn btn-danger"

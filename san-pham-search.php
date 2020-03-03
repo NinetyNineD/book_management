@@ -39,7 +39,7 @@ if (count($result) > 0) {
                     <td>
                         <button data-id = "' . $item['id'] . '" class="btn-click-edit-product btn btn-warning"
                                                 role="button" data-toggle="modal" data-target="#modelIdUpdate">
-                                            <i class="fa fa-pencil-alt">Sửa</i>
+                                            <i class="fa fa-pencil-alt"></i>Sửa
                         </button>
 
                         <button data-id = "' . $item['id'] . '" class="btn-click-delete-product btn btn-danger"
